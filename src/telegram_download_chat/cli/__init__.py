@@ -182,15 +182,6 @@ async def async_main() -> int:
         for chat_id in chats:
             chat_args = replace(args, chat=chat_id, chats=[chat_id])
 
-            if (
-                chat_args.subchat
-                and not chat_args.output
-                and not chat_id.endswith(".json")
-            ):
-                downloader.logger.error(
-                    "--subchat requires an existing JSON file as input"
-                )
-                return 1
 
             if chat_id.endswith(".json"):
                 result = await convert_json_to_txt(

@@ -2,7 +2,7 @@ import json
 import logging
 import time
 from pathlib import Path
-from typing import Any, Callable, Dict, List, Tuple
+from typing import Any, Callable, Dict, List, Optional, Tuple
 
 
 class PartialDownloadManager:
@@ -11,7 +11,7 @@ class PartialDownloadManager:
     def __init__(
         self,
         make_serializable: Callable[[Any], Any],
-        logger: logging.Logger | None = None,
+        logger: Optional[logging.Logger] = None,
     ) -> None:
         self.make_serializable = make_serializable
         self.logger = logger or logging.getLogger(__name__)

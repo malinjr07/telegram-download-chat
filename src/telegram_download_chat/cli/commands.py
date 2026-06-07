@@ -143,9 +143,13 @@ def split_messages_by_date(messages: List[Any], split_by: str) -> Dict[str, List
 
 
 def filter_messages_by_subchat(
-    messages: List[Dict[str, Any]], subchat_id: str
-) -> List[Dict[str, Any]]:
+    messages: List[Any], subchat_id: str
+) -> List[Any]:
     """Filter messages by reply_to_msg_id or reply_to_top_id."""
+    if subchat_id.lower() == "general" or subchat_id == "1":
+        from telegram_download_chat.core.topics import _extract_topic_id
+        return [msg for msg in messages if _extract_topic_id(msg) is None]
+
     if subchat_id.startswith("https://t.me/c/"):
         parts = subchat_id.strip("/").split("/")
         if len(parts) >= 3:
@@ -163,12 +167,20 @@ def filter_messages_by_subchat(
 
     filtered = []
     for msg in messages:
-        reply_to = msg.get("reply_to")
-        if not reply_to:
-            continue
-        if str(reply_to.get("reply_to_msg_id")) == str(target_id) or str(
-            reply_to.get("reply_to_top_id")
-        ) == str(target_id):
+        if isinstance(msg, dict):
+            reply_to = msg.get("reply_to")
+            if not reply_to:
+                continue
+            r_msg_id = str(reply_to.get("reply_to_msg_id"))
+            r_top_id = str(reply_to.get("reply_to_top_id"))
+        else:
+            reply_to = getattr(msg, "reply_to", None)
+            if not reply_to:
+                continue
+            r_msg_id = str(getattr(reply_to, "reply_to_msg_id", None))
+            r_top_id = str(getattr(reply_to, "reply_to_top_id", None))
+
+        if r_msg_id == str(target_id) or r_top_id == str(target_id):
             filtered.append(msg)
     return filtered
 
@@ -633,8 +645,34 @@ async def process_chat_download(
                         pass
             messages = _dedup_messages(messages + cited)
 
+    # For forum supergroups, fetch topic titles up front so the HTML/PDF export
+    # can name topics (and build tabs) even when their topic-create messages
+    # fall outside a windowed download. Best-effort: a failure must not block
+    # the export. save_messages() reads downloader._forum_topic_titles.
+    downloader._forum_topic_titles = {}
+    try:
+        forum_entity = await downloader.get_entity(chat_identifier)
+        if getattr(forum_entity, "forum", False):
+            from telegram_download_chat.core.topics import fetch_forum_topics
+            downloader._forum_topic_titles = await fetch_forum_topics(
+                downloader, forum_entity
+            )
+    except Exception as e:  # pragma: no cover - network/permission dependent
+        downloader.logger.debug(f"Could not fetch forum topics: {e}")
+
     if args.subchat:
-        messages = filter_messages_by_subchat(messages, args.subchat)
+        subchat_val = args.subchat
+        if subchat_val.lower() != "general" and not subchat_val.startswith("https://"):
+            try:
+                int(subchat_val)
+            except ValueError:
+                for tid, title in downloader._forum_topic_titles.items():
+                    if title.lower() == subchat_val.lower():
+                        subchat_val = str(tid)
+                        downloader.logger.info(f"Resolved topic name '{args.subchat}' to ID {tid}")
+                        break
+                        
+        messages = filter_messages_by_subchat(messages, subchat_val)
         downloader.logger.info(
             f"Filtered to {len(messages)} messages in subchat {args.subchat}"
         )
@@ -693,19 +731,7 @@ async def process_chat_download(
 
     full_chat_title = await downloader.get_entity_full_name(chat_identifier)
 
-    # For forum supergroups, fetch topic titles up front so the HTML/PDF export
-    # can name topics (and build tabs) even when their topic-create messages
-    # fall outside a windowed download. Best-effort: a failure must not block
-    # the export. save_messages() reads downloader._forum_topic_titles.
-    downloader._forum_topic_titles = {}
-    try:
-        forum_entity = await downloader.get_entity(chat_identifier)
-        if getattr(forum_entity, "forum", False):
-            downloader._forum_topic_titles = await fetch_forum_topics(
-                downloader, forum_entity
-            )
-    except Exception as e:  # pragma: no cover - network/permission dependent
-        downloader.logger.debug(f"Could not fetch forum topics: {e}")
+    # Forum topics were fetched above
 
     split_messages: Dict[str, List[Any]] = {}
     topic_dirs: Dict[str, Path] = {}
