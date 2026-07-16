@@ -498,7 +498,7 @@ async def process_chat_download(
         )
     else:
         chat_dir = output_dir / safe_chat_name
-        stem = f"messages_subchat_{args.subchat}" if args.subchat else "messages"
+        stem = f"{safe_chat_name}_messages_subchat_{args.subchat}" if args.subchat else f"{safe_chat_name}_messages"
         output_file = str(chat_dir / f"{stem}.json")
         # Ensure the chat directory exists early so partial files can be written
         chat_dir.mkdir(parents=True, exist_ok=True)

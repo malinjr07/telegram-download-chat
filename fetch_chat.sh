@@ -26,3 +26,13 @@ uv run telegram-download-chat 3929008719 --subchat "CHAT"
 
 echo "SKY"
 uv run telegram-download-chat @skyloras
+
+echo "The Geek Side"
+uv run telegram-download-chat @thegeekside --subchat "General"
+uv run telegram-download-chat @thegeekside --subchat "News"
+uv run telegram-download-chat @thegeekside --subchat "Sharing"
+uv run telegram-download-chat @thegeekside --subchat "AI"
+uv run telegram-download-chat @thegeekside --subchat "Proxy"
+uv run telegram-download-chat @thegeekside --subchat "Mobile Dev"
+uv run telegram-download-chat @thegeekside --subchat "Antibot / Captcha & RE"
+uv run telegram-download-chat @thegeekside --subchat "Web Dev"
