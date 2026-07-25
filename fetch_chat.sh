@@ -5,7 +5,7 @@ echo "AI Hustlers"
 uv run telegram-download-chat @aihustlersgc --subchat "general"
 
 echo "Stacked Creators"
-uv run telegram-download-chat @stackedcreators --subchat "Stacked"
+uv run telegram-download-chat @stackedcreators --subchat "General"
 
 echo "Doritoz"
 uv run telegram-download-chat 3886593329 --subchat "General"
