@@ -1,9 +1,6 @@
 echo "Faceless Francis Group"
 uv run telegram-download-chat 3051045515
 
-echo "AI Hustlers"
-uv run telegram-download-chat @aihustlersgc --subchat "general"
-
 echo "Hive Mind"
 uv run telegram-download-chat @HiveMind_OFM
 
@@ -17,12 +14,12 @@ uv run telegram-download-chat 3929008719 --subchat "CHAT"
 echo "Stacked Creators"
 uv run telegram-download-chat @stackedcreators --subchat "General"
 
+echo "ComfyOFM"
+uv run telegram-download-chat @ComfyOFM
+
 echo "Doritoz"
 uv run telegram-download-chat 3886593329 --subchat "General"
 uv run telegram-download-chat 3886593329 --subchat "Dev Talk"
-
-echo "ComfyOFM"
-uv run telegram-download-chat @ComfyOFM
 
 echo "SKY"
 uv run telegram-download-chat "SKY AI OFM"
@@ -36,6 +33,9 @@ uv run telegram-download-chat @thegeekside --subchat "Proxy"
 uv run telegram-download-chat @thegeekside --subchat "Mobile Dev"
 uv run telegram-download-chat @thegeekside --subchat "Antibot / Captcha & RE"
 uv run telegram-download-chat @thegeekside --subchat "Web Dev"
+
+echo "AI Hustlers"
+uv run telegram-download-chat @aihustlersgc --subchat "general"
 
 echo "Dasha Yoo"
 uv run telegram-download-chat @DashaYoo10

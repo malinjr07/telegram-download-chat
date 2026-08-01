@@ -28,6 +28,7 @@ class CLIOptions:
     last_days: Optional[int] = None
     until: Optional[str] = None
     split: Optional[str] = None
+    max_txt_size: float = 2.6
     sort: str = "asc"
     results_json: bool = False
     keywords: Optional[str] = None
@@ -122,11 +123,17 @@ def parse_args(argv: Optional[list[str]] = None) -> CLIOptions:
     )
     parser.add_argument(
         "--split",
-        choices=["month", "year", "topics"],
+        choices=["month", "year", "topics", "size"],
         help=(
-            "Split output: by month, by year, or by forum topic "
-            "(one <chat>/<topic_slug>/ subdirectory per topic)"
+            "Split output: by month, by year, by forum topic, or by file size "
+            "(splits TXT files when > 2.6MB without severing reply citations)"
         ),
+    )
+    parser.add_argument(
+        "--max-txt-size",
+        type=float,
+        default=2.6,
+        help="Maximum text file size in MB when using --split size (default: 2.6MB)",
     )
     parser.add_argument(
         "--sort",

@@ -132,6 +132,7 @@ class ConvertTab(QWidget):
         self.split_combo.addItem("Don't split", None)
         self.split_combo.addItem("By Month", "month")
         self.split_combo.addItem("By Year", "year")
+        self.split_combo.addItem("By File Size (2.6MB)", "size")
 
         split_layout.addWidget(QLabel("Split output by:"))
         split_layout.addWidget(self.split_combo)

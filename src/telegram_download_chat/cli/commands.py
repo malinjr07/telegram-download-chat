@@ -162,6 +162,55 @@ def split_messages_by_date(messages: List[Any], split_by: str) -> Dict[str, List
     return split_messages
 
 
+async def split_messages_by_size(
+    downloader: Any,
+    messages: List[Any],
+    max_bytes: int = int(2.6 * 1024 * 1024),
+    sort_order: str = "asc",
+    media_placeholders: bool = False,
+    reactions: bool = False,
+) -> Dict[str, List[Any]]:
+    """Split messages into part dictionaries ('part1', 'part2', ...) based on max file size in bytes.
+
+    Maintains complete thread groups (root messages + all their replies/comments)
+    in each part so citations are never severed across split files.
+    """
+    thread_groups = downloader.group_messages_by_thread(messages, sort_order)
+    parts_messages: List[List[Any]] = []
+    current_part: List[Any] = []
+    current_part_size = 0
+
+    for group in thread_groups:
+        group_size = 0
+        for msg in group:
+            try:
+                line = await downloader.format_msg_to_txt_line(
+                    msg, media_placeholders, reactions
+                )
+                group_size += len(line.encode("utf-8"))
+            except Exception:
+                pass
+
+        if current_part and (current_part_size + group_size > max_bytes):
+            parts_messages.append(current_part)
+            current_part = []
+            current_part_size = 0
+
+        current_part.extend(group)
+        current_part_size += group_size
+
+    if current_part:
+        parts_messages.append(current_part)
+
+    if len(parts_messages) <= 1:
+        return {}
+
+    result: Dict[str, List[Any]] = {}
+    for idx, part in enumerate(parts_messages, 1):
+        result[f"part{idx}"] = part
+    return result
+
+
 def filter_messages_by_subchat(
     messages: List[Any], subchat_id: str
 ) -> List[Any]:
@@ -490,7 +539,7 @@ async def process_chat_download(
         )
     else:
         chat_dir = output_dir / safe_chat_name
-        stem = f"{safe_chat_name}_messages_subchat_{args.subchat}" if args.subchat else f"{safe_chat_name}_messages"
+        stem = f"subchat_{args.subchat}" if args.subchat else "messages"
         output_file = str(chat_dir / f"{stem}.json")
         # Ensure the chat directory exists early so partial files can be written
         chat_dir.mkdir(parents=True, exist_ok=True)
@@ -770,7 +819,18 @@ async def process_chat_download(
                 except OSError:
                     pass
         elif args.split:
-            split_messages = split_messages_by_date(messages, args.split)
+            if args.split == "size":
+                max_bytes = int((getattr(args, "max_txt_size", None) or 2.6) * 1024 * 1024)
+                split_messages = await split_messages_by_size(
+                    downloader,
+                    messages,
+                    max_bytes=max_bytes,
+                    sort_order=args.sort,
+                    media_placeholders=args.media_placeholders,
+                    reactions=args.reactions,
+                )
+            else:
+                split_messages = split_messages_by_date(messages, args.split)
             if not split_messages:
                 downloader.logger.warning(
                     "No messages with valid dates found for splitting"
@@ -986,7 +1046,18 @@ async def convert(
 
     split_messages: Dict[str, List[Any]] = {}
     if args.split:
-        split_messages = split_messages_by_date(messages, args.split)
+        if args.split == "size":
+            max_bytes = int((getattr(args, "max_txt_size", None) or 2.6) * 1024 * 1024)
+            split_messages = await split_messages_by_size(
+                downloader,
+                messages,
+                max_bytes=max_bytes,
+                sort_order=args.sort,
+                media_placeholders=args.media_placeholders,
+                reactions=args.reactions,
+            )
+        else:
+            split_messages = split_messages_by_date(messages, args.split)
         if not split_messages:
             downloader.logger.warning(
                 "No messages with valid dates found for splitting"

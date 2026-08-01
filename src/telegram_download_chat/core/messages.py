@@ -149,9 +149,9 @@ class MessagesMixin:
 
         return None
 
-    def prepare_messages_for_txt(
+    def group_messages_by_thread(
         self, messages: List[Dict[str, Any]], sort_order: str = "asc"
-    ) -> List[Dict[str, Any]]:
+    ) -> List[List[Dict[str, Any]]]:
         epoch = datetime.min.replace(tzinfo=timezone.utc)
 
         def parse_dt(msg: Dict[str, Any]) -> datetime:
@@ -166,10 +166,6 @@ class MessagesMixin:
                 dt = dt.replace(tzinfo=timezone.utc)
             return dt
 
-        # A channel comment keeps its native discussion-group id, which lives in
-        # a separate id space and can collide with a real channel post id. Build
-        # the parent index from posts first so a comment never shadows the post
-        # it belongs to (mirrors the id-space guard in core/render.py).
         id_map: Dict[Any, Dict[str, Any]] = {}
         for m in messages:
             mid = m.get("id")
@@ -194,10 +190,6 @@ class MessagesMixin:
 
         def traverse(msg: Dict[str, Any]) -> List[Dict[str, Any]]:
             child_msgs = []
-            # Comments are leaves: they are normalized to reply to their parent
-            # post and never parent other messages, so never follow children by a
-            # comment's own id. When that id collides with a post id, doing so
-            # would recurse until RecursionError.
             if msg.get("comment_of") is None:
                 for child in sort_msgs(children.get(msg.get("id"), [])):
                     child_msgs.extend(traverse(child))
@@ -206,10 +198,18 @@ class MessagesMixin:
                 return child_msgs + [msg]
             return [msg] + child_msgs
 
-        ordered_messages: List[Dict[str, Any]] = []
+        thread_groups: List[List[Dict[str, Any]]] = []
         for root in sort_msgs(roots):
-            ordered_messages.extend(traverse(root))
+            thread_groups.append(traverse(root))
 
+        return thread_groups
+
+    def prepare_messages_for_txt(
+        self, messages: List[Dict[str, Any]], sort_order: str = "asc"
+    ) -> List[Dict[str, Any]]:
+        ordered_messages: List[Dict[str, Any]] = []
+        for group in self.group_messages_by_thread(messages, sort_order):
+            ordered_messages.extend(group)
         return ordered_messages
 
     @staticmethod
@@ -282,6 +282,61 @@ class MessagesMixin:
 
         return "[media]"
 
+    async def format_msg_to_txt_line(
+        self,
+        msg: Dict[str, Any],
+        media_placeholders: bool = False,
+        reactions: bool = False,
+    ) -> str:
+        date_str = msg.get("date", "")
+        if date_str:
+            try:
+                dt = datetime.fromisoformat(str(date_str).replace("Z", "+00:00"))
+                date_fmt = dt.strftime("%Y-%m-%d %H:%M:%S")
+            except (ValueError, TypeError):
+                date_fmt = ""
+        else:
+            date_fmt = ""
+
+        sender_name = msg.get("user_display_name") or ""
+        if not sender_name:
+            sender_id = self._get_sender_id(msg)
+            if sender_id:
+                sender_name = await self._get_user_display_name(sender_id)
+
+        text = msg.get("text", "")
+        if not text and "message" in msg:
+            text = msg["message"]
+
+        if media_placeholders:
+            placeholder = self._get_media_placeholder(msg.get("media"))
+            if placeholder:
+                if text:
+                    text = f"{text}\n{placeholder}"
+                else:
+                    text = placeholder
+
+        if reactions:
+            reactions_suffix = format_reactions_text(msg.get("reactions"))
+            if reactions_suffix:
+                if text:
+                    text = f"{text} [{reactions_suffix}]"
+                else:
+                    text = f"[{reactions_suffix}]"
+
+        recipient_name = ""
+        recipient_id = self._get_recipient_id(msg)
+        if recipient_id:
+            recipient_name = await self._get_peer_display_name(recipient_id)
+
+        if date_fmt or sender_name:
+            if recipient_name:
+                return f"{date_fmt} {sender_name} -> {recipient_name}:\n{text}\n\n"
+            else:
+                return f"{date_fmt} {sender_name}:\n{text}\n\n"
+        else:
+            return f"{text}\n\n"
+
     async def save_messages_as_txt(
         self,
         messages: List[Dict[str, Any]],
@@ -289,76 +344,71 @@ class MessagesMixin:
         sort_order: str = "asc",
         media_placeholders: bool = False,
         reactions: bool = False,
+        max_file_size_bytes: Optional[int] = None,
+        split_by_size: bool = False,
     ) -> int:
         saved = 0
         txt_path.parent.mkdir(parents=True, exist_ok=True)
-        txt_path.write_text("", encoding="utf-8")  # Truncate for fresh overwrite
 
-        ordered_messages = self.prepare_messages_for_txt(messages, sort_order)
+        if split_by_size and max_file_size_bytes is None:
+            max_file_size_bytes = int(2.6 * 1024 * 1024)
 
-        for msg in ordered_messages:
-            try:
-                date_str = msg.get("date", "")
-                if date_str:
+        thread_groups = self.group_messages_by_thread(messages, sort_order)
+
+        if max_file_size_bytes and max_file_size_bytes > 0:
+            # Group threads into file parts while respecting max_file_size_bytes.
+            # Never split a thread group across parts so citations stay connected.
+            parts: List[List[str]] = []
+            current_part_lines: List[str] = []
+            current_part_size = 0
+
+            for group in thread_groups:
+                group_lines: List[str] = []
+                group_size = 0
+                for msg in group:
                     try:
-                        dt = datetime.fromisoformat(
-                            str(date_str).replace("Z", "+00:00")
+                        line = await self.format_msg_to_txt_line(
+                            msg, media_placeholders, reactions
                         )
-                        date_fmt = dt.strftime("%Y-%m-%d %H:%M:%S")
-                    except (ValueError, TypeError):
-                        date_fmt = ""
-                else:
-                    date_fmt = ""
+                        group_lines.append(line)
+                        group_size += len(line.encode("utf-8"))
+                    except Exception as e:
+                        logging.warning(f"Error formatting message to TXT: {e}")
 
-                # Prefer the name already resolved in save_messages (which knows
-                # how to name channel posts); fall back to user resolution for
-                # messages passed straight into the TXT path (e.g. conversions).
-                sender_name = msg.get("user_display_name") or ""
-                if not sender_name:
-                    sender_id = self._get_sender_id(msg)
-                    if sender_id:
-                        sender_name = await self._get_user_display_name(sender_id)
+                if current_part_lines and (current_part_size + group_size > max_file_size_bytes):
+                    parts.append(current_part_lines)
+                    current_part_lines = []
+                    current_part_size = 0
 
-                text = msg.get("text", "")
-                if not text and "message" in msg:
-                    text = msg["message"]
+                current_part_lines.extend(group_lines)
+                current_part_size += group_size
 
-                if media_placeholders:
-                    placeholder = self._get_media_placeholder(msg.get("media"))
-                    if placeholder:
-                        if text:
-                            text = f"{text}\n{placeholder}"
-                        else:
-                            text = placeholder
+            if current_part_lines:
+                parts.append(current_part_lines)
 
-                if reactions:
-                    reactions_suffix = format_reactions_text(msg.get("reactions"))
-                    if reactions_suffix:
-                        if text:
-                            text = f"{text} [{reactions_suffix}]"
-                        else:
-                            text = f"[{reactions_suffix}]"
-
-                recipient_name = ""
-                recipient_id = self._get_recipient_id(msg)
-                if recipient_id:
-                    recipient_name = await self._get_peer_display_name(recipient_id)
-
-                if date_fmt or sender_name:
-                    if recipient_name:
-                        line = (
-                            f"{date_fmt} {sender_name} -> {recipient_name}:\n{text}\n\n"
+            if len(parts) > 1:
+                base_stem = txt_path.stem
+                ext = txt_path.suffix or ".txt"
+                for idx, part_lines in enumerate(parts, 1):
+                    part_file = txt_path.with_name(f"{base_stem}_part{idx}{ext}")
+                    part_file.write_text("".join(part_lines), encoding="utf-8")
+                    saved += len(part_lines)
+            elif parts:
+                txt_path.write_text("".join(parts[0]), encoding="utf-8")
+                saved += len(parts[0])
+        else:
+            txt_path.write_text("", encoding="utf-8")  # Truncate for fresh overwrite
+            for group in thread_groups:
+                for msg in group:
+                    try:
+                        line = await self.format_msg_to_txt_line(
+                            msg, media_placeholders, reactions
                         )
-                    else:
-                        line = f"{date_fmt} {sender_name}:\n{text}\n\n"
-                else:
-                    line = f"{text}\n\n"
-
-                with open(txt_path, "a", encoding="utf-8") as f:
-                    f.write(line)
-                saved += 1
-            except Exception as e:
-                logging.warning(f"Error saving message to TXT: {e}")
+                        with open(txt_path, "a", encoding="utf-8") as f:
+                            f.write(line)
+                        saved += 1
+                    except Exception as e:
+                        logging.warning(f"Error saving message to TXT: {e}")
 
         if self._fetched_usernames_count > 0 or self._fetched_chatnames_count > 0:
             self._save_config()

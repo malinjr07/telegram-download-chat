@@ -272,6 +272,7 @@ class DownloadTab(QWidget):
         self.split_combo.addItem("By Month", "month")
         self.split_combo.addItem("By Year", "year")
         self.split_combo.addItem("By Topic", "topics")
+        self.split_combo.addItem("By File Size (2.6MB)", "size")
         self.split_combo.setMaximumWidth(200)
         settings_form.addRow("Split output:", self.split_combo)
 
