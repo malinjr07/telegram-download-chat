@@ -1,0 +1,488 @@
+2026-05-18 16:57:43 Hermetic Dev -> The Geek Side:
+iOS / Android Topic
+
+2026-05-18 16:59:52 Hermetic Dev -> The Geek Side:
+
+
+2026-05-18 17:15:22 Sun Tzu -> The Geek Side:
+Wen are we going to talk about RE
+
+2026-05-18 17:15:36 Hermetic Dev -> The Geek Side:
+start xD
+
+2026-05-18 17:31:08 edw -> The Geek Side:
+
+
+2026-05-18 17:15:26 Sun Tzu -> The Geek Side:
+
+
+2026-05-18 17:16:34 Sun Tzu -> The Geek Side:
+I prefer to learn from the masters
+
+2026-05-18 17:16:43 Sun Tzu -> The Geek Side:
+
+
+2026-05-20 02:21:34 The Geek Side -> The Geek Side:
+who worked on ios tiktok/X before?
+
+2026-05-27 22:53:07 Krad | On-Chain Slueth -> The Geek Side:
+meeee
+
+2026-05-25 14:09:06 The Geek Side -> The Geek Side:
+[TLS] sni=graph.facebook.com alpn=h2,http/1.1 ja3=b76d503360ae441d410a85a7f8d648ab ja4=t13d0d0eh2_f57a46bbacb6_14788d8d241b
+        ja3_str=771,4865-4866-4867-49196-49195-52393-49200-49199-52392-49162-49161-49172-49171,0-23-65281-10-11-16-5-13-18-51-45-43-27-21,29-23-24-25,0
+        curves=[29, 23, 24, 25] sig_algs_count=11 supported_versions=['0x304', '0x303']
+
+[TLS] sni=scontent-ams2-1.cdninstagram.com alpn=h2 ja3=87d49415a23810ab5c4b15e32cb511c2 ja4=t13d0207h2_ec078ce24869_e918dd3cc848
+        ja3_str=771,4865-255,0-16-43-51-45-10-13,29-23,
+        curves=[29, 23] sig_algs_count=8 supported_versions=['0x304']
+
+[TLS] sni=i.instagram.com alpn=h2 ja3=87d49415a23810ab5c4b15e32cb511c2 ja4=t13d0207h2_ec078ce24869_e918dd3cc848
+        ja3_str=771,4865-255,0-16-43-51-45-10-13,29-23,
+        curves=[29, 23] sig_algs_count=8 supported_versions=['0x304']
+
+2026-05-25 14:09:17 The Geek Side -> The Geek Side:
+
+
+2026-05-25 14:10:33 The Geek Side -> The Geek Side:
+today i feel in a giving mood
+
+2026-05-27 22:53:09 Krad | On-Chain Slueth -> The Geek Side:
+but web based
+
+2026-05-27 22:53:13 Krad | On-Chain Slueth -> The Geek Side:
+ran a few hundred accountooo
+
+2026-05-27 23:26:37 Fred -> The Geek Side:
+Web based iOS?
+
+2026-05-28 03:45:28 CEO -> The Geek Side:
+
+
+2026-05-27 23:26:40 Fred -> The Geek Side:
+Wthelly
+
+2026-05-28 10:11:50 Armani -> The Geek Side:
+yo, 
+I'm making a threads automation on Android
+I have question what better to use Android or IOS?
+
+2026-05-28 11:46:39 CEO -> The Geek Side:
+Whatever you master
+
+2026-05-28 12:32:12 Armani -> The Geek Side:
+I noticed you only sell iOS stuff.
+
+I swear I saw some quick overview of all your products somewhere
+Where can I find that again? I can’t see any of that stuff on your main sales site
+
+2026-05-28 12:32:51 CEO -> The Geek Side:
+My stuff is in no web anymore, excepting basic tweaks like jb bypasses for some apps
+
+2026-05-28 11:46:46 CEO -> The Geek Side:
+They are completely different to work on
+
+2026-05-28 12:33:43 CEO -> The Geek Side:
+im doing new stuff or custom stuff for people
+
+2026-05-28 12:33:47 CEO -> The Geek Side:
+More than public stuff
+
+2026-06-04 04:05:19 Call Jaun -> The Geek Side:
+Available ready-made same zip for Reddit, Threads, Whatsapp and more apps. 
+
+iOS Unpinning made easy and repeatable in future.
+
+2026-06-04 04:05:19 Call Jaun -> The Geek Side:
+idk if this the right channel but admin talk topi is locked. can i get these? im trynna find out at what requests ig checks app attest
+
+2026-06-04 04:05:52 Hermetic Dev -> The Geek Side:
+dmed
+
+2026-06-05 15:37:31 CEO -> The Geek Side:
+anyone here loaded XNU kernelcache into IDA before?
+
+2026-06-10 14:29:39 George -> The Geek Side:
+Hello guys, does anyone has any experience with 0GADS(https://github.com/shamanec/GADS).
+I managed to sideload WebDriverAgent using an app but GADS still doesn't work.
+Is there any way to sign the ipa file from my Windows PC?
+
+2026-06-10 14:31:09 CEO -> The Geek Side:
+For signing on windows IPA without XCode you can rely on services like kravasign.com
+
+2026-06-10 14:42:50 George -> The Geek Side:
+Is there any opensource version of this or a cheaper alternative?
+
+2026-06-10 14:43:26 CEO -> The Geek Side:
+Open source no, free no, cheaper i dont know
+
+2026-06-10 14:33:05 CEO -> The Geek Side:
+If you need to run Appium on windows I open sourced a (limited to 5 devices) framework for appium on GitHub.com/hermeticdev23
+
+From there you can do your research to substitute some libs and make it work with no limits. Is a very simple system boilerplate, dont expect the work done, but may be very useful. Star the repo ⭐
+
+2026-06-10 14:30:16 CEO -> The Geek Side:
+@TheHiveMedia is that what you use? And is not Mac only?
+
+2026-06-10 14:34:26 CEO -> The Geek Side:
+I may open source a better boilerplate in future if this gets love
+
+2026-06-10 14:38:07 Matt -> The Geek Side:
+anyone know how to get the touch on tiktok with wda or something
+
+2026-06-10 14:38:10 Matt -> The Geek Side:
+wda is blocked
+
+2026-06-10 14:39:00 CEO -> The Geek Side:
+Never did but as far as I know you can’t use WDA on tiktok by design, there is no selector as they don’t use xpaths
+
+2026-06-10 14:39:07 CEO -> The Geek Side:
+You need to build a full OCR solution
+
+2026-06-10 14:39:14 CEO -> The Geek Side:
+I may be wrong
+
+2026-06-10 14:40:19 Matt -> The Geek Side:
+https://clout.wtf/
+https://nomixclicker.com/
+
+2026-06-10 14:40:24 Matt -> The Geek Side:
+these are the two solutions i see sold online
+
+2026-06-10 14:40:33 Matt -> The Geek Side:
+one is a connected thing that touches ur device
+
+2026-06-10 14:40:39 Matt -> The Geek Side:
+u can ocr without wda easily
+
+2026-06-10 14:40:40 CEO -> The Geek Side:
+U can build OCR so easily
+
+2026-06-10 14:40:42 CEO -> The Geek Side:
+Just invest time
+
+2026-06-10 14:40:42 Matt -> The Geek Side:
+but the touch keeps blocking tiktok
+
+2026-06-10 14:40:59 CEO -> The Geek Side:
+If u dont have the time or the skill, then buy
+
+2026-06-10 14:41:27 CEO -> The Geek Side:
+Never runned/automated tiktok so I can’t relate properly
+
+2026-06-10 14:42:05 Matt -> The Geek Side:
+yeah the ocr is easy just wondered if anyone ahs pointers on how to interact with the phone without wda. Claude telling me to buy a esp32 chip thing
+
+2026-06-10 15:06:00 M -> The Geek Side:
+non jailbroken?
+
+2026-06-10 14:42:08 Matt -> The Geek Side:
+gonna try this
+
+2026-06-10 14:42:19 CEO -> The Geek Side:
+OCR is not WDA
+
+2026-06-10 14:42:25 CEO -> The Geek Side:
+You answered yourself already
+
+2026-06-10 14:42:32 CEO -> The Geek Side:
+OCR is image recognition
+
+2026-06-10 14:42:42 Matt -> The Geek Side:
+Fair u right , but u dont need OCR for the touch
+
+2026-06-10 14:42:53 CEO -> The Geek Side:
+WDA is selector clicking using accesibility features
+
+2026-06-10 14:43:34 CEO -> The Geek Side:
+Cheaper is having Mac and apple developer program
+
+2026-06-10 14:43:42 CEO -> The Geek Side:
+99$ 100 devices
+
+2026-06-10 14:43:52 CEO -> The Geek Side:
+This plataforms resell slots of ADP
+
+2026-06-10 14:44:02 George -> The Geek Side:
+Thank you!
+
+2026-06-10 14:44:11 CEO -> The Geek Side:
+20$ one device 1 year with warranty or 9$ 1 device with just few days of warranty
+
+2026-06-10 14:44:28 CEO -> The Geek Side:
+The 20$ one is the way imo
+
+2026-06-10 14:44:34 CEO -> The Geek Side:
+It last one year
+
+2026-06-10 14:44:41 CEO -> The Geek Side:
+And they replace if apple revoke
+
+2026-06-10 14:45:21 CEO -> The Geek Side:
+Eitherway spend 200$ on an old used Mac + apple developer program and forget
+
+2026-06-10 14:45:34 CEO -> The Geek Side:
+U can build a farm of 100 devices 😂
+
+2026-06-10 14:46:07 CEO -> The Geek Side:
+Also you can ask a friend with Mac to sign for you
+
+2026-06-10 14:46:16 CEO -> The Geek Side:
+I started doing appium like this
+
+2026-06-10 14:46:37 CEO -> The Geek Side:
+Then passed to kravasign then bought a Mac to sign and dev iOS stuff properly
+
+2026-06-10 14:49:03 Matt -> The Geek Side:
+like once u got ocr all good but wana know how its interacting with device. its through dev mode etc so thought iut would have been WDA
+
+2026-06-10 14:49:03 Mr. D -> The Geek Side:
+https://afkpal.com/ with some quick research, under 10$. Wondering if you can just run bunch of OFM operation on it lol
+
+2026-06-10 14:49:36 Matt -> The Geek Side:
+u can run adspower mobiles and other providers for this sort of thing anyway?
+
+2026-06-10 14:51:03 Mr. D -> The Geek Side:
+They are all more expensive
+
+2026-06-10 14:51:51 CEO -> The Geek Side:
+Cloud Android
+
+2026-06-10 14:51:14 Matt -> The Geek Side:
+ah fair
+
+2026-06-10 14:52:01 CEO -> The Geek Side:
+I think people here were talking about real iPhones
+
+2026-06-10 14:52:17 CEO -> The Geek Side:
+Passed from Black to white xd
+
+2026-06-10 14:53:00 CEO -> The Geek Side:
+Cloud is detected by any app with a minimum security if im not wrong. On android is more expert @gengar81
+
+2026-06-10 14:58:04 zerzvx -> The Geek Side:
+Cloud phones=Emulators? Or im wrong?
+
+2026-06-10 14:59:37 Hermetic Dev -> The Geek Side:
+no i think is different
+
+2026-06-10 14:59:44 Hermetic Dev -> The Geek Side:
+im not sure, in ios we dont have that stuff 😂
+
+2026-06-10 14:59:49 Hermetic Dev -> The Geek Side:
+i think cloud is like aliremote
+
+2026-06-10 14:59:56 Hermetic Dev -> The Geek Side:
+and emu is bluestacks like
+
+2026-06-10 15:00:22 Hermetic Dev -> The Geek Side:
+cloud > emu that im almost sure
+
+2026-06-10 15:01:32 zerzvx -> The Geek Side:
+Aaah, on android i just used geelark
+
+2026-06-10 15:01:35 zerzvx -> The Geek Side:
+But no anymore
+
+2026-06-10 15:02:05 zerzvx -> The Geek Side:
+But geelark uses real phones i think
+
+2026-06-10 15:03:14 𝓑𝓾𝓶𝓫𝓮𝓮 | HubXlabs | Tweaks -> The Geek Side:
+Bro is not real phone is cloud phone
+
+2026-06-10 15:05:43 zerzvx -> The Geek Side:
+Thats what i read time ago
+
+2026-06-10 15:06:06 𝓑𝓾𝓶𝓫𝓮𝓮 | HubXlabs | Tweaks -> The Geek Side:
+Most of them are based on redroid
+
+2026-06-10 15:06:28 zerzvx -> The Geek Side:
+didnt know
+
+2026-06-10 15:06:09 zerzvx -> The Geek Side:
+I dont use geelark since november
+
+2026-06-10 15:11:31 𝓑𝓾𝓶𝓫𝓮𝓮 | HubXlabs | Tweaks -> The Geek Side:
+"Real phone " is only marketing mostly all android cloud phone on the market = redroid on arm server
+
+2026-06-10 16:24:07 CEO -> The Geek Side:
+tf u did for dev automation with mythos
+
+2026-06-10 16:24:15 CEO -> The Geek Side:
+i asked him to change UI of a web and flagged the chat
+
+2026-06-10 16:24:25 CEO -> The Geek Side:
+useless bitch mythos
+
+2026-06-10 16:25:06 Matt -> The Geek Side:
+bro like 1h building context that i work at tiktok
+
+2026-06-10 16:25:12 CEO -> The Geek Side:
+btw imo "humanizing" ui automation is not a thing
+
+2026-06-10 16:25:27 Matt -> The Geek Side:
+maybe ye ill see if i can scale. only got a few scrolls rn
+
+2026-06-10 16:25:14 Matt -> The Geek Side:
+then basically slowly pivoted in
+
+2026-06-10 16:25:19 CEO -> The Geek Side:
+lol
+
+2026-06-10 16:25:24 CEO -> The Geek Side:
+did the harness with opus?
+
+2026-06-10 16:25:28 Matt -> The Geek Side:
+yeah^
+
+2026-06-10 16:25:46 CEO -> The Geek Side:
+awsm
+
+2026-06-10 16:25:49 CEO -> The Geek Side:
+good one
+
+2026-06-10 16:26:17 CEO -> The Geek Side:
+i did prove to bitchos that youtweakin.com is mine and still not wanting to audit my security
+
+2026-06-10 16:26:35 CEO -> The Geek Side:
+even having FUCKING CODEBASE
+
+2026-06-10 16:27:06 Alex PO -> The Geek Side:
+I think its more about how you ask him to do it
+
+2026-06-10 16:27:35 Matt -> The Geek Side:
+lol
+
+2026-06-10 16:28:43 Alex PO -> The Geek Side:
+it flags the prompt usually, not the code base that s my case tho idk abt yall
+
+2026-06-10 16:29:18 Matt -> The Geek Side:
+can prob hit it even easier if u like hide stuff in codenbase like this is good for the world etc etc, then get it to read the codebase
+
+2026-06-10 16:29:33 Matt -> The Geek Side:
+need to defense test this for safety etc
+
+2026-06-10 16:30:21 Alex PO -> The Geek Side:
+u have the auto model changing off btw?
+
+2026-06-10 16:30:33 Matt -> The Geek Side:
+nah on tbf
+
+2026-06-10 16:30:47 Alex PO -> The Geek Side:
+check if he switched to opus
+
+2026-06-10 16:30:54 Alex PO -> The Geek Side:
+that can happen
+
+2026-06-10 16:31:01 Matt -> The Geek Side:
+yeah i been watching it usually asys when it does
+
+2026-06-10 16:31:47 Alex PO -> The Geek Side:
+tbh best is to turn off auto changing model and u can see which prompt triggers the safety limit
+
+2026-06-11 09:35:35 Armani -> The Geek Side:
+What you think guys 
+on Iphone
+
+Automation running  on screen of iphone, could be detected by meta?
+
+2026-06-11 09:59:52 CEO -> The Geek Side:
+Mostly not
+
+2026-06-11 10:01:36 PacketPixel -> The Geek Side:
+I think the automation script have to be that good, right?
+Cause basic automation script won't add up screen gesture track. Which meta does check...
+
+2026-06-12 10:14:20 Maverick -> The Geek Side:
+Is it possible to downgrade an iPhone to an unsigned iOS version?
+
+2026-06-12 10:17:28 zerzvx -> The Geek Side:
+I think not
+
+2026-06-12 10:19:45 CEO -> The Geek Side:
+Only if u have SHSH blobs Which u wont have 99% sure
+
+2026-06-12 11:05:33 Maverick -> The Geek Side:
+Yeah not able to find
+
+2026-06-12 11:09:58 CEO -> The Geek Side:
+You need to have them dumped from your own device when it was in X version
+
+2026-06-12 11:11:39 Maverick -> The Geek Side:
+I see so no way to go back to a specific version?
+
+2026-06-12 11:20:01 Hermetic Dev -> The Geek Side:
+Oh i readed wrong
+
+2026-06-12 11:10:02 CEO -> The Geek Side:
+You can not find them
+
+2026-06-12 11:11:53 Hermetic Dev -> The Geek Side:
+Exploits or jailbreak
+
+2026-06-12 11:14:34 Maverick -> The Geek Side:
+Was looking to take iPhone 12, 13 to iOS 18 or 17.
+
+2026-06-12 11:20:15 Hermetic Dev -> The Geek Side:
+DS?
+
+2026-06-12 11:20:29 Maverick -> The Geek Side:
+Yeah :)
+
+2026-06-12 11:20:08 Hermetic Dev -> The Geek Side:
+Nevermind this xD
+
+2026-06-12 11:20:40 Maverick -> The Geek Side:
+Exploring
+
+2026-06-12 11:20:42 Hermetic Dev -> The Geek Side:
+I bought 2 in this week
+
+2026-06-12 11:20:44 Hermetic Dev -> The Geek Side:
+Not easy
+
+2026-06-12 11:20:46 Hermetic Dev -> The Geek Side:
+But findable
+
+2026-06-12 11:21:01 Hermetic Dev -> The Geek Side:
+I legit send 70 dm a day
+
+2026-06-12 11:21:17 Hermetic Dev -> The Geek Side:
+2 days a week I go diff city shop tours
+
+2026-06-12 11:21:32 Hermetic Dev -> The Geek Side:
+This is the best ngl
+
+2026-06-12 11:21:53 Maverick -> The Geek Side:
+Planning to do it for next few days
+
+2026-06-12 11:27:08 Matt -> The Geek Side:
+this for new iphones on old ios?
+
+2026-06-12 11:30:38 Hermetic Dev -> The Geek Side:
+Stable on 18.4-18.6.2
+
+2026-06-12 11:21:18 Maverick -> The Geek Side:
+Was looking for devices it’s so hard asf
+
+2026-06-14 19:05:29 Hermetic Dev -> The Geek Side:
+anyone with real XNU knowledge around here?
+
+2026-06-24 16:42:32 Mr. D -> The Geek Side:
+What's the best open source cloning app for either android or iphone with integrated fingerprint spoofer & where you can set IP address & matching GPS
+
+2026-06-24 22:21:54 Hermetic Dev -> The Geek Side:
+For iOS the only OS stuff is app cloner and dont let u do all that itself but u can use aswell geranium (jb) that OS and allows GPS spoof. CLI in my GitHub aswell
+
+2026-07-31 12:42:27 ⌞ ⌝ -> The Geek Side:
+App cloner for ios?
+
+2026-07-31 13:16:57 zerzvx -> The Geek Side:
+Best option out there rn its doritos
+
+2026-07-31 13:21:33 ⌞ ⌝ -> The Geek Side:
+For sure
+
+2026-07-24 08:22:44 CEO -> The Geek Side:
+Who cloned usbliter8?
+

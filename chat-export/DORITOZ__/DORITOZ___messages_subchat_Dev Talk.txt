@@ -1,0 +1,1362 @@
+2026-02-08 22:28:52 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Night of testing: Will add confirmed working apps with register process video on new topics on the group.
+
+2026-02-08 22:40:31 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+i think i will start testing now Hinge, Reddit, Tinder
+people who use IG and Threads, you can safely buy, works perfect there
+DA guys, just patiently wait our "go" signal
+
+2026-02-09 16:09:22 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+GIVEAWAY⚠️
+
+Invite your friends to the group. We will give 2 x5 license to 2 random people in the group when we hit 200 members!
+
+https://t.me/+LBrZRIzwBck0MDRk
+
+2026-02-10 05:27:14 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+anyone willing to do any iOS API panel? i want to bypass some apps ssl. hmu with what you need
+
+2026-02-10 05:32:59 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+btw, Instagram last update 416.0, just bypassed and updated to the web
+
+2026-02-10 14:10:37 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+new one i'm working on. want this?
+
+2026-02-10 14:14:08 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Improving DORITOS everyday, made Backups tab improvements as per customers requests, also added that if having an active LocSim and performing a backup, the coordinates will be saved and on restore it will automatically spoof coordinates of the device to the stored ones again. We are not lying when we say that DORITOS is the best spoofer out there, and will get better when supporting more apps. We care about y'all, let's make this the best tweak ever! 🙈
+
+2026-02-11 03:11:55 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Surprise!
+Max 1 use. Expires at 14/02/2026.
+800$ 300$
+
+UnpIG 416.0📱
+
+2026-02-11 03:12:32 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+One buy = 3 updates (you choose when)
+youtweakin.com/product/unpig
+
+2026-02-11 21:34:54 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+I was thinking, and I will NOT release WhatsCert?
+After bypassing the SSL, I found out that the API of WA is strongly encrypted (Noise_XX_25519_AESGCM_SHA256). You need a public HPKE key from their servers, to encrypt the plain-text. Not even worth the try. Anyone  able to do that API, can unpin itself the app. And for the normal people, there is no way you can construct nothing around their API. I just saw the hell. 
+
+_: /v2/pre_pn_client_log
+ENC: 
+  bRLbB9xcTCoJwRJDia5SZ51idV9sTRAUaZC8cwtJWjS_AoAuIWFEd7rWwnoQITZKyQdNXBNXHy2Ec5JQ0jpOCidfJySoyByUT3-w9D-f4FCHPWRdqg8YInYnrFFmV-scQJP-X8vXrmXDhjCIMfzvubJPrRz8QSZEdi1fp4ptJ1A79h8gk4k50wams8-Ysk4dGPsRUBF8L5xZACu7kJldOE9Rz-QxpcMI58Yfd5oCr-R7M7DHCAu9VQmkMc6LFDGlWnO7KPlOXR3-Sd7O6-zVz4Ymxh0WZZ_bCnFUPfKqF740ojyOal6Clqss4l4XEwxAnrgg_hOPYOqdoLW5VvhyiDT2DtsxbbrGKfc6ZSx2stSCmwjdIgwk2QYNPN9Q8hV092DS3XkSjjvaj03ZQ9cUB5uQ8Ni08fxL8PPDmoahXN2WjTFLAtMrlWfI6kYPKKXoJVyOLKMP5Kp-ZfE=
+
+For your curiosity, all the call bodies look like that. Don't waste money to unpin WA. I save you this.
+
+2026-02-11 21:35:29 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Pinder📱 will replace it :)
+
+2026-02-13 13:57:45 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Already 103/200. 97+ and we giveaway 2 (x5) licenses! LFG!
+
+2026-02-15 02:52:52 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+THJB coming out tomorrow in Youtweakin.com📱
+Why did I make this? As far as we know, Threads works fine on jailbroken devices — no blocks, no crashes. But after digging into the binary following the last banwave that hit so many of us, I found something interesting: Threads actively checks for jailbreak.
+
+So I asked myself — if they're detecting jailbreak but not blocking users like Tinder does, what's the point? What if they're silently flagging jailbroken devices for extra scrutiny, stricter verification, or even shadow restrictions? Maybe a view cap? Maybe feeding it into their ban algorithm?
+
+Nobody knows for sure. But with THJB, you can be certain that no jailbreak info leaves your device to Threads' servers. As we say in Spain: "Mejor prevenir que curar."
+
+2026-02-15 14:36:09 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+New version of TJB and HJB after FaceTecSDK last update. Available on 
+📱 youtweakin.com/product/hjb
+📱 youtweakin.com/product/tjb
+
+2026-02-16 02:49:53 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+don't forget about this! This week ref program rewards will be doubled. You get +4 devices, your friend +2. Is almost a free license for referring your friends.
+
+rules: being a customer, getting referred on buy by someone (telegram handle used on referral input)
+
+2026-02-17 03:24:22 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+will add a username for each device you link to your doritos license. this is for the customers who got VAs, to be able for us to identify a specific VA for key-revoking and re-assign to new ones
+
+2026-02-18 00:15:32 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+updating db for better accuracy!
+
+2026-02-18 00:17:46 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+scraping different official Wikis & DBs to don't mismatch a single param
+
+2026-02-18 02:23:16 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+new DB outputs, dope🔥
+
+2026-02-18 17:34:10 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+146/200, call your friends, we're close to the 2 license giveaway! I'll start doing a bot for the GC to do the giveaway ;)
+
+2026-02-18 17:36:39 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Most demos are gone or expired. Testers, time to make  a decision
+
+2026-02-18 17:36:42 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-02-18 21:49:29 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Working on FaceTec to try to let you verify on Hinge.
+
+2026-02-18 22:19:04 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+FaceTec has a massive anti-tamper system lol
+
+2026-02-18 22:10:24 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+If your Carrier is not matching the proxy is not a bug: set the carrier manually in "Configure Spoofing". After that you will see apps prompting directly "+1" or the correct prefix based on Carrier.
+
+2026-02-21 21:01:19 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Boost the group. We will giveaway some stuff to boosters :)
+
+2026-02-21 21:19:57 SS (IG Automation & Tweak Dev) -> DORITOZ 👾:
+
+
+2026-02-21 21:21:12 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+https://t.me/boost?c=3886593329
+
+2026-02-22 01:08:44 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Rework incoming 📦⛏
+
+2026-02-22 01:28:45 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-02-22 04:00:04 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Working on a completely renewed system to isolate your apps
+
+2026-02-22 18:28:39 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Small spoilers:
+Doritos 2.0: renewed container system & VA license-control
+Doritos 3.0: add-ons & plug-ins in-app market
+Doritos 4.0: private in-app community to share and spread info
+
+This are just 2 spoilers. Lot of other stuff coming with each major patch. Expect many minor patches between this majors, fixing bugs, improving experience, and adding many apps support. The next months we are going back to the MLG Era. The prime of the internet.
+
+2026-02-22 18:28:45 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-02-22 21:32:58 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+1 person already received a free gift just for boosting the group!
+
+2026-02-22 21:33:04 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-02-22 23:18:14 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-02-22 23:18:14 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-02-22 23:18:51 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+v2 each hour get closer
+
+2026-02-25 16:05:15 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Few hours for doritos 2.0
+
+2026-02-25 20:01:28 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-02-25 20:01:28 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+IMEI Check
+
+2026-02-25 20:02:00 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-02-25 20:19:32 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+around 30min
+
+2026-02-25 20:19:35 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+and 2.0 is out
+
+2026-02-26 02:47:24 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+we suggest for now to go with palera1n while we check the compatibility for Dopamine
+
+2026-02-26 02:47:24 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+spotted a potential issue with containers and dopamine where isolation seems to fail. only reported twice on Dopamine setups, iphone 12 and iphone Xr
+
+2026-02-27 05:19:23 SS (IG Automation & Tweak Dev) -> DORITOZ 👾:
+filming and typing is hard asf :/
+
+btw just took DORITOS out of the jail and make it work for non-jailbroken devices, just embedded Doritos inside instagram (being able to have infinite containers and spoof them). my device is an iPhone 14 Pro, as you can see, without jailbreak since last jb is capped at 17.0, so there’s no trick, just magic. this is just a beta test, will be adding more features to it to make it better. (deployed on 418.1 version, i know instagram already dropped 418.2) 💧
+
+Now about DORITOS for JB devices, been fixing bugs and testing in multiple devices, now is stable for iPhone X, iPhone 8 and iPhone 7 running palera1n or Dopamine, adding support to more jailbreaks soon. 
+
+For customers of Doritos for jailbroken devices, dropping the version with performance improvements and minor bug fixes in couple hours, stay tunned ty <3 @secretsauce27 @thehermeticdev
+
+2026-03-01 14:53:47 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+https://t.me/boost?c=3886593329
+
+2026-03-04 23:41:28 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+WINRA1N IS NOW SUPPORTED - About to release update. No more black screen for Winra1n users!
+
+2026-03-05 00:36:41 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Spotted issues for A12 chip on iPhone XR, we're working on it right now with a customer that spotted the crash issue. Soon new compatibility!
+
+2026-03-05 00:57:49 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Added compatibility for iPhone Xs, iPhone Xs Max & iPhone XR. (A12 Bionic)
+
+2026-03-05 00:59:31 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+3/3 customer care calls of tonight passed with SUCCESS! Doritos everyday more compatible and strong!
+
+2026-03-07 19:20:44 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+https://t.me/boost?c=3886593329
+
+2026-03-11 15:43:27 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+just in case somebody else asks
+
+2026-03-11 15:43:27 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Notification must be turned off
+
+2026-03-11 15:43:27 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+the most annoying is this, 3 times each container switch haha
+
+2026-03-11 15:43:31 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+also allow paste
+
+2026-03-11 15:43:36 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+to avoid shadowrocket modals!
+
+2026-03-12 03:29:36 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+anon vouch by req: "Can you hide my name?
+
+I just bought gallery cli from @thehermeticdev works fine i highly recommend it ,i spent 12 hours trying to fix the issue and gallery cli do it in 10min"
+
+2026-03-14 21:37:49 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-03-14 21:37:56 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+LFG
+
+2026-03-14 22:47:51 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Device Model iPhone18,3 
+iOS 26.1.1
+Screen 375pt @ 3x
+Device ID 26EC3E56-D11B-7862-0D2A-3D93FFFBAF73
+Vendor ID same as Device ID
+Ad ID A46B9D84-6B82-46E4-B6BE-BFEDCAAA33B1
+
+2026-03-14 22:47:52 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-03-14 22:47:54 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Reddit confirmed
+
+2026-03-15 22:10:18 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+IG Reverse Engineering notes:
+
+  Pattern emerging
+
+recordOrganicBioLinkClickTime is inconsistent — it fired for link.me
+  profiles (both sessions) but NOT for linktr.ee or myslink.app. This
+  suggests:
+
+  - link.me is recognized differently by Instagram's quantum signals system —
+   it triggers the organic bio click recording
+  - linktr.ee and myslink.app do NOT trigger it — Instagram may treat these
+  as "non-organic" link-in-bio services, or they bypass the bio link click
+  model entirely
+
+  All three get identical linkshim treatment (same l.instagram.com wrapper,
+  same tracking params). The only difference is the quantum signals telemetry
+   — link.me gets counted as organic, the others don't.
+
+  This matters because the quantum signals feed into Meta's trust scoring. If
+   your bio link click isn't recorded as "organic," it may not contribute
+  positively to your account's trust score — or worse, it could signal to the
+   server that traffic is being routed through a third-party aggregator.
+
+  Recommendation based on findings
+
+  For "higher quality" bio links from Instagram's perspective:
+  1. Direct URLs (yourdomain.com) — get the organic click signal
+  2. link.me — also gets the organic click signal (possibly a Meta partner?)
+  3. linktr.ee / myslink.app / other aggregators — do NOT get organic click
+  signal
+
+2026-03-15 22:35:41 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+The IG reinstall fix lasted the time of a cigarette
+
+2026-03-15 22:35:46 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+still investigating
+
+2026-03-16 14:41:05 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-03-16 14:41:05 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Opa i respect you, never wanted to offend you. For real, your an idol for me. 😢
+
+2026-03-16 14:41:31 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Sad Day
+
+2026-03-16 14:43:53 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Allways said crane is goated. Never wanted to compete with crane, or shit on it. also because we cant, opa is way higher than us. We made doritos as a info spoofer and added containers to support an all in one idea based on OFM.
+
+2026-03-16 14:44:07 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Just to say, hoping you see this someday. Unlucky meeting.
+
+2026-03-17 13:35:33 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+everything i need rn 😳
+
+2026-03-17 16:28:09 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-03-17 16:35:48 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Oh this is why https://www.reddit.com/r/jailbreak/comments/1rra92u/dopamine_and_trollinstallerx_do_not_support/
+
+2026-03-17 19:18:39 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Introducing TindHub 📱  : The Ultimate iOS Stealth Engine Tweak for Jailed phone (No jailbreak needed}
+
+Tired of shadowbans, DeviceCheck blocks, and forced Face-Verifications? The game has changed. Meet TindHub, the most advanced iOS tweak ever engineered to completely bypass algorithmic tracking and strict anti-bot systems
+
+Stop buying burner phones. TindHub transforms your current iPhone into an infinite fleet of pristine, untraceable devices.
+
+ ⚙️ Unmatched Feature Set:
+
+ ℹ️True Profile Containerization: Create infinite virtual profiles with one tap. TindHub  isolates everything. No data leaks, ever.
+
+🌎 Per-Container SOCKS5 Proxies     
+                                                                                                                                                  
+👷‍♀️Deep Hardware & OS Spoofing: Completely mask your digital footprint. Spoof your iPhone model (up to iPhone 17 Pro), iOS version, IDFA, IDFV, UUIDs, RAM, and Many other things.
+
+📱 Interactive MapKit GPS Spoofer: Teleport anywhere in the world with pinpoint accuracy using our built-in Apple Maps interface with real-time search.
+
+🔗WKWebView & Telemetry Masking: Evade complex fingerprinting and biometric engines natively. TindHub automatically orchestrates your web telemetry to match your spoofed device data, rendering modern anti-bot challenges obsolete
+
+😁Compatible IOS (18 to 26) any iPhone
+
+Any reputable MM accepted - Price in DM  @bumbeul😄
+
+2026-03-17 19:18:49 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+vouch for this guy, big hustle
+
+2026-03-17 19:18:59 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+soon on youtweakin.com available
+
+2026-03-18 12:50:03 SS (IG Automation & Tweak Dev) -> DORITOZ 👾:
+some improvements to DoritosLite for Instagram 🍆
+
+2026-03-18 16:27:20 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Remember we do have a ref program! Invite one friend, get +2 devices on your license per each license your referred will get, and he will get an extra device too!
+
+2026-03-19 04:10:11 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-03-19 04:10:11 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+BETA INSTAGRAM AUTOMATION 📱
+
+i just opened 2 slots for testers, that's how my instagram automation will look a like, plug your devices via web and play actions right away. 
+
+Doritos is fully included, it creates or switches containers via CLI automatically depending on action. The action running on video is Login so it created a new container to login the account, it handles username|password|2fa, but you can perform any action: Warmup (change username, name, bio, add link) Engage (scroll and like in home, search or reels tab), Posting (post carousels, stories, reels) Follow/Unfollow (from a list of target users you can set how many users from that list each account will follow, then anytime if your account has too many follows you can run unfollow anytime. 
+
+it allows to chain actions like e.g after performing login action you can run right away an engage action or whatever, if you want to setup the account directly you can as well so once account is logged in it will start doing the next action without closing the app. 
+
+those who become testers will help me to spot bugs and issues and will make this even better, ofc they will be rewarded for helping me :)
+
+if ur interested hmu 🗿
+
+2026-03-20 20:50:47 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+New carriers added:
+  - China (4): China Mobile (460/00), China Unicom (460/01), China Telecom (460/03), China Broadnet (460/15)
+  - Georgia (3): MagtiCom (282/01), Silknet (282/02), Cellfie (282/04)
+  - Kenya: Faiba (639/05) added as 4th carrier
+
+  New countries added to COUNTRIES array:
+  - China (cn, MCC 460) with 20 first names
+  - Georgia (ge, MCC 282) with 20 first names
+
+  MNC corrections (verified via ITU/mcc-mnc.org):
+  - 9mobile Nigeria: 40 → 60 (40 was Ntel, different operator)
+  - Banglalink Bangladesh: 07 → 03 (07 was defunct Warid)
+  - Teletalk Bangladesh: 03 → 04 (was swapped with Banglalink)
+  - WOM Colombia: 020 → 360 (020 was Emtelsa/Tigo)
+  - Simba Singapore: 12 → 10 (12 was GRID Communications)
+
+
+  New country entries with 60 first names each:
+  - Russia (ru, MCC 250) - mix of classic + modern Russian names
+  - Georgia (ge, MCC 282) - researched from Georgian Public Service Hall records
+
+  Final state: 45 countries, 170 carriers 
+
+PS: forgot Chile
+
+2026-03-20 20:51:04 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+some already on server, some like Russia will be available on 2.1.5
+
+2026-03-21 04:51:40 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+WARNING!!!! 
+
+DISABLE AUTOMATIC UPDATES FROM YOU JAILBROKEN DEVICE, APPLE DROPPED AN UPDATE FOR IOS 15 AND 16, IF YOU UPDATE TO IOS 15.8.7 ON IPHONE 7/8 AND 16.7.15 ON IPHONE 8/X YOU WILL NOT BE ABLE TO USE DOPAMINE AND TROLLSTORE. PALERA1N SEEMS TO WORK BUT BETTER TO NOT UPDATE. 
+
+STAY BELOW THOSE VERSIONS!!!
+
+2026-03-21 14:15:43 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+15:15, ain't fucking slept yet. But, just wait a few minutes.
+
+2026-03-21 14:16:07 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+@secretsauce27 👀
+
+2026-03-21 14:16:40 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Boss, can I go bed, please?
+
+2026-03-21 14:22:37 SS (IG Automation & Tweak Dev) -> DORITOZ 👾:
+sybau and work, 24h without sleeping already? pushing to 48h 😐
+
+2026-03-21 14:24:10 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-03-21 14:24:10 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-03-21 14:24:10 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-03-21 14:24:10 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-03-21 14:25:15 SS (IG Automation & Tweak Dev) -> DORITOZ 👾:
+
+
+2026-03-21 14:25:20 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-03-21 14:25:39 SS (IG Automation & Tweak Dev) -> DORITOZ 👾:
+
+
+2026-03-22 09:59:15 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-03-22 09:59:33 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+⏳
+
+2026-03-23 07:06:53 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+cookin in the kitchen
+
+2026-03-23 20:01:49 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Sayonara Shadowrocket
+
+2026-03-25 04:54:50 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+https://t.me/+S0QxXD7s-NlkZTA0
+
+New Info group. No idea of what to do, but you can populate this meanwhile. Atm will able to sell and propose, search and buy. Use it as info point we've been last 2 months banning scammers and bots (still doing so)
+
+2026-03-25 04:56:14 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+burned 200 members in the last days, revive this shit
+
+2026-03-25 18:48:30 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+⚡️ PulseChat AI - V1 ⚡️
+
+AI-powered Telegram chatbot that chats with your leads and sends CTA links automatically. DPO-trained LLM, intent detection, lead scoring, photo escalation. No manual DMs. Just configure and run. 🚀
+
+GitHub: https://github.com/yaziradevteam/PulseChatAI
+
+_____________________________
+
+🚀 Features
+
+• Custom DPO-trained LLM via RunPod Serverless + vLLM
+• Multi-intent detection (Mistral Small 24B via DeepInfra)
+• Lead temperature scoring - cold/warm/hot
+• Smart CTA timing based on engagement signals
+• Photo escalation system (casual > flirty > spicy)
+• Auto re-engagement for inactive users
+• RAG memory - remembers past conversations
+• Voice & image support (Whisper + GPT-4o)
+• Works with Fanvue, OnlyFans, or any link
+
+_____________________________
+
+How to get started
+
+Read the README on GitHub → configure config.py → deploy your model on RunPod → python bot_telethon.py → 🚀 Live
+
+_____________________________
+
+Help improve the model
+
+If you want to support the project, share your conversation data with us so we can retrain and make the model even better.
+
+_____________________________
+
+Changelog
+
+> v1 Release
+> Initial public release
+> Full AI conversation pipeline
+> Lead scoring & CTA system
+> Photo escalation
+> RAG memory system
+> Re-engagement system
+
+_____________________________
+
+⚠️ Note: This is v1, some things may break. Report bugs and issues to @yaziraof
+
+2026-03-25 21:17:39 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+I'm looking for someone with an iPhone 14 running iOS 18.4-18.7 to test the new jailbreak with the DarkSword kexploit.
+
+2026-03-28 10:10:01 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+i'm giving 50 IG accounts to 1 person with SMS Pool API Key and Proxy available. 100% free, need just feedback of quality in exchange
+
+2026-03-29 06:36:28 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-03-30 09:36:39 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+who's getting unlogged from IG?
+
+2026-03-31 06:04:37 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+PRINGLES for everybody soon 🤪
+
+2026-03-31 10:43:34 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+https://www.blackhatworld.com/seo/doritos-your-jb-suite-for-ios-multi-accounting-containers-proxies-locsim-spoofing.1804744/
+
+Our marketplace thread was approved on BHW! Would love to see our customers vouching in the thread!!
+
+2026-03-31 11:30:53 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Cheetos x @thehermeticdev @gh0stc0de_dk
+
+2026-04-01 14:04:46 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+https://t.me/diddysmsbot?start=ref_9KQNRXAK
+
+all this free promo at least if u go make them pay me xDDDD
+
+2026-04-01 15:18:10 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+EASTER IS HERE!
+
+During this week, Doritos will have a 15% discount per license + 1 JB Bypass/Hider for free! 
+
+170$ - Doritos for 5 devices + 1 JB Bypass/Hider of your choice! 
+🐇Code "EASTER"🐇
+
+youtweakin.com/product/doritos
+
+2026-04-01 17:51:04 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Grindr API & Chatting Agency > @gh0stc0de_dk
+
+2026-04-02 14:00:57 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+i'm off the next 4h
+
+2026-04-03 08:04:08 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+if someone need specific support for NON DA/SN (BA's or other) hit DM we will be coding some add-ons this days
+
+2026-04-03 12:57:53 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+im clonning bolt and ordering free food 😭
+
+2026-04-03 12:57:53 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+lol doritos is nuts
+
+2026-04-04 09:57:02 Hermetic Dev | iOS Developer -> DORITOZ 👾:
++rep @bumbeul antigravity max accounts at 50$, just copped mine. fast delivery.
+
+2026-04-05 09:02:39 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Got some personal problems, Will be right back tomorrow replying all.
+
+2026-04-06 19:52:48 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+T.me/nathandev0scam
+
+2026-04-06 19:53:24 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Hi Jonathan. I have your mail but im not sure so I Will not leak it. also few passwords:3
+
+2026-04-06 19:53:45 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Enjoy your scammed pennies while u can fucking rat
+
+2026-04-06 23:58:18 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+guys who's running snap ios? how much the accs are going? and as non jailbroken, you can login your bought accs with no problems?
+
+2026-04-06 23:58:33 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+good news incoming i need some info
+
+2026-04-07 16:18:10 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+last day of easter offer! CODE "EASTER" for 15% + free JB Bypass
+
+2026-04-07 19:21:03 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+https://www.youtweakin.com/snap
+
+2026-04-08 09:45:12 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-04-08 10:22:10 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+youtweakin.com OFF FOR THE NEXT HOURS, DO NOT BUY. I will notice you all when is all up again. We're working!
+
+2026-04-08 17:04:40 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+There’s 2 types of people you deal with constantly,  givers and takers.
+
+Takers always think:
+“What can I get from this?”
+They’ll take your time, your energy, your ideas… and when it’s time to give back, they’re nowhere.
+
+Givers think:
+“What can I bring to this?”
+They build, they help, they create value.
+
+BUT, important part most people miss…
+
+Being a giver doesn’t mean being a pushover.
+
+You don’t give to everyone.
+You don’t let people drain you.
+
+The goal is to be a smart giver.
+
+Give where it matters.
+Give to the right people.
+Build with people who also give.
+
+Because long term , takers always get exposed.
+People stop trusting them, doors close.
+
+Givers who are smart?
+They build networks, loyalty, leverage.
+
+That’s how you actually win.
+
+2026-04-08 18:21:29 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+youtweakin.com is on again!
+
+2026-04-09 11:13:26 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+selling hablemosenprivado.com
+
+for spanish link in bio, expires Dec. 11, 2026
+
+2026-04-09 16:32:12 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Pulsechat v2 has entered training phase - If anyone here works with other agencies or has a agency on their own and is willing to provide chat data (can be anonymised) to help towards training please message me! contributers will get early access after training is done
+
+any language, any platform, so long as its OFM related (client to model conversation)
+
+2026-04-10 15:03:23 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+https://www.instagram.com/mariaaasoprano
+
+Day 10, still alive 📱🔥
+
+2026-04-10 15:03:35 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Will start testing them properly against DM
+
+2026-04-10 15:10:23 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+DORITOS SERVER DOWN FEW MINS. Renewing certs
+
+2026-04-11 01:09:08 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-04-11 01:09:08 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+tic, tac.
+
+2026-04-11 01:16:02 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-04-13 12:08:25 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Doritos solved all our IG n threads issues best tweak out
+
+2026-04-14 17:18:21 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+https://conference.hitb.org/hitbsecconf2021sin/materials/D1T2%20-%20Fooling%20Apple%20AppAttest%20API%20-%20Igor%20Lyrchikov.pdf
+
+2026-04-14 17:18:21 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+https://www.guardsquare.com/blog/remove-constraints-of-ios-app-attest
+
+2026-04-14 17:18:21 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Today Hermetic Teacher dealing class for you all. Lets learn the basics of DeviceCheck and App Attest
+
+2026-04-14 18:33:24 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-04-14 18:33:24 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-04-14 18:33:24 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Anyone know a tweak to spoof the iPhone model? Tried Ghost with Crane, seems "fine" but IG still shows iPhone 8.
+
+https://redd.it/1nh3h80
+@r_jailbreak
+
+2026-04-14 18:33:46 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+So far of the competition, and way cheaper :)
+
+2026-04-14 18:34:01 SS (IG Automation & Tweak Dev) -> DORITOZ 👾:
+
+
+2026-04-14 18:34:03 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Thanks to all of you for all the support
+
+2026-04-14 18:34:04 SS (IG Automation & Tweak Dev) -> DORITOZ 👾:
+facts
+
+2026-04-14 18:34:10 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+😎
+
+2026-04-14 18:35:12 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Doritos is on his first months of life, imagine Where are We going to be in a year 🏌🏼
+
+2026-04-14 18:36:49 SS (IG Automation & Tweak Dev) -> DORITOZ 👾:
+
+
+2026-04-14 18:48:29 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Someone stalked all my stories(few people, but one person hitted my eyes in a particular way😭😂)
+
+2026-04-14 22:19:46 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+24 years 🎂🎂
+
+2026-04-15 18:33:07 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+NEW PRODUCT: 
+10k$ Claude API tokens x 150$
+
+2026-04-15 18:44:14 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+10.000 - 150$
+5.000 - 100$
+2.000 - 60$
+1.000 - 35$
+
+2026-04-15 20:52:09 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Timewaster enjoying free software, after trial extension he vanished. For people like him, we will not provide any more free trials. From now, 50$ for trial. Say thx to people like him! @samatlac
+
+Who buy will get discounted the trial fee from the price. Who don’t buy will lose the 50, easy as that
+
+2026-04-16 10:40:03 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+📹 ShutUpApple v1.0.0
+                                                                                                                                                                                                                Tired of your iPhone screaming "ENTER YOUR APPLE ID PASSWORD" every 5 seconds like an ex that won't move on?
+                                                                                                                                                                                                                Say no more. ShutUpApple does exactly what the name says — tells Apple to shut the f**k up.                                                                                                                   
+                                                                                                                                                                                                               No more "Apple ID Verification" popups. No more "Update Apple ID Settings". No more opening Settings and getting jumped by a login alert. Gone. Silenced. Deceased. 💀
+
+yeah for free, for those having that issue on his jb device enjoy the silence
+
+2026-04-16 14:36:47 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Clown of the week: @zer0mate
+
+2026-04-16 14:37:25 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+He wanted doritos but got ban of the GC 🫩
+
+2026-04-17 16:52:01 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+https://t.me/floweroflights_jew
+
+His (boy)friend
+
+2026-04-17 18:51:20 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Thanks to new team partners and collaborators, We are offering in-house Android custom solutions. Ask straight in DM!
+
+2026-04-18 11:42:16 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+good morning, back at work. replying all the last days messages in the next hour.
+
+2026-04-18 11:43:30 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+faster and easier
+
+2026-04-18 11:43:30 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+it never ask for number if you add 2fa with 2fa.live
+
+2026-04-18 11:43:30 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Yo, do you know if you can make IG accounts with one-time phone numbers and then swap to email so it’s never going to ask for it again? Is there a risk it will ask for it later even if the phone number is removed from the account for a month plus?
+
+2026-04-18 11:43:43 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+valid for everyone. non sense on adding mail for avoiding sms imo, just add 2fa.
+
+2026-04-20 10:33:15 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Just to be clear, WE do the pricing for OUR software. WE know the time and effort behind and WE valuate them. Dont make us loose time trying to jew 50 bucks, thx. And dont try to egomax EXPLAINING TO ME MY PRICING. Lmao
+
+2026-04-20 10:33:31 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Let me explain you Why 🤓☝️
+
+2026-04-20 10:34:50 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+The DL competition charge 600. The Doritos competition charge 300 and do 20% maybe. Where are overpricing?
+
+2026-04-20 17:49:02 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+sovrae.io/youtweakin
+10% off
+Prices with no disc:
+Virtual no kyc 89$
+Physical low kyc 249$
+Physical no kyc 349$ (withdrawals allowed)
+
+2026-04-21 14:41:22 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+not giving an ETA; but i will get that ;)
+
+2026-04-21 14:41:46 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+tiktok, doritos is coming to you :D
+
+2026-04-21 14:42:45 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+just some TT Intel in my side
+
+2026-04-21 15:17:42 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+there is a problem we're working on with doritos over 250 containers in the same device
+
+2026-04-21 15:18:14 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+crane faced similar problems. is a low RAM problem of the old iphones, we will try a new compression system to enhance this limit, but anyway at some point you need another device, ngl
+
+2026-04-21 15:31:44 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Our MM services for:
+Unbans/accounts, and various types of buy/sell transactions
+are now charged at 3%-5% depending on the case.
+
+(Commissions with our marketplace clients are completely separate from these services and are customized.)
+
+Vouches:
+
+https://t.me/+W9VZtNfGlZ81Y2Nk
+
+2026-04-21 15:32:04 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+cheapest trusted MM around @gcastleg
+
+2026-04-21 15:32:31 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+https://t.me/castlesservices
+
+2026-04-23 10:29:08 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+want to thank the +20 customers that trusted me and @Sovrae_io for your daily expenses.
+just to remember that you can get your physical or virtual credit card to top up crypto and spend in your local currency, with the lowest fees possible. Withdrawal allowed. NO KYC.
+
+sovrae.io/youtweakin
+10% discount
+
+2026-04-24 11:39:52 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+https://github.com/yaziradevteam/DC-ssl-unpinned
+
+Discord v306 SSL unpinned APK.
+
+2026-04-25 10:59:53 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+1) Win+R
+2) %LOCALAPPDATA%\Microsoft\SngCache\ and %LOCALAPPDATA%\Microsoft\IdentityCRL\
+3) if exists, you got malware jewing Anthropic
+
+2026-04-25 11:00:28 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+- 
+deployment in 4 stages
+: PowerShell → Go binary → VBS obfuscation → payload .NET
+- Hides in %LOCALAPPDATA%\Microsoft\SngCache\ and %LOCALAPPDATA%\Microsoft\IdentityCRL\ (folders that look legitimate from Microsoft)
+- Creates a scheduled task \Microsoft\Windows\Maintenance\CodeAssist that runs on each login with SYSTEM privileges
+- Reroute ALL your system traffic through its SOCKS5 proxy at 2.27.43.246:1080 (Germany, bulletproof hosting)
+- Disables PowerShell script crash logging and clears event logs
+- It should be noted that Tria.ge identifies as 
+Aura Stealer
+ (credential theft/browser/wallets)
+- Keep your Claude Code kidnapped so that every future prompt passes through them
+
+2026-04-25 11:01:51 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+If you used AWSTORE you're at risk
+
+2026-04-25 11:05:44 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Assume full commitment. Treat that machine like it's burned out.
+
+1. Disconnect from the network immediately
+2. Check ~/.claude/settings.json → remove any ANTHROPIC_BASE_URL override 
+3. Review Task Scheduler for \Microsoft\Windows\Maintenance\CodeAssist
+4. Revisa procesos: claude-code.exe, awproxy.exe, proxy.exe, tun2socks.exe
+5. Change 
+all passwords
+ - saved browser credentials, SSH keys, API tokens, crypto wallets, everything
+6. Rotate any API key, token, or credential that has been in your shell history or project files
+7. Ideally: drag the machine and reinstall Windows
+
+## Network IOCs to block:
+
+api.awstore.cloud (domin C2)
+2.27.43.246                (proxy SOCKS5, AS215439)
+
+## File Hashes (SHA256):
+
+claude-code.exe:  e692b647018bf74ad7403d5b8cf981c8cfaa777dd7f16a747e3d3f80f5300971
+awproxy.exe: 8736f7040f587472f66e85e895709e57605c8e7805522334ae664e3145a81127
+proxy.exe: e86f7ba0413a4b1d7e1a275b3d1ef62345c9d3fd761635ff188119b8122c85
+tus2socks.exe: 90547fe071fe471b02da83dd150b5db7ce02454797e7f288d489b1ff0c4dd67c
+
+2026-04-25 11:06:22 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+It is the 
+first time seeing a real-world attack weaponizing an agent's ability to use tools with LLMs against its own user via a malicious API endpoint
+. It will be copied. Expect more fake API providers targeting Cursor, Cline, Continue, etc.
+
+2026-04-26 13:56:25 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+today leaving my actual home, moving to another italian city, then moving to china 2 days the 6th to arrive Australia the 8th. excusing myself for the next days but i'll be a bit off for chatting, while I'll be working on the projects sametime i do the relocation. Hope you all can understand it
+
+2026-04-28 16:14:25 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal
+
+Historical ECMAscript update. RIP Date object. Hi Temporal API!
+
+2026-04-28 17:31:05 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+As the OG's already know, we gave some licenses when hitted 200 members.
+NEXT GIVEAWAY: x2 licenses (5 devices each) to 2 active users of our community when hitting 500 members! Let's invite your friends! 
+
+linktr.ee/hermeticdev > Doritos GC
+
+2026-04-28 17:32:06 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-04-28 22:29:25 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+i think i'm finally understanding why X is not working on Doritos. coming soon (i hope, ngl)
+
+2026-04-29 12:18:18 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+https://t.me/TheOnlyFansCafe
+
+2026-04-30 17:06:00 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-05-02 15:49:24 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Personal Vouch 
+
+https://t.me/evensbuilding/70
+
+2026-05-03 12:43:33 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+i was facing some issue on the new device so i tried to fix it and found that it worked when i downloaded ellekit
+
+2026-05-03 12:43:43 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Ellekit is 100% mandatory in any tweak on palerain etc
+
+2026-05-03 12:43:49 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Just fyi
+
+2026-05-04 08:47:32 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-05-04 08:47:32 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Confirmed atbot.live plans. 
+Coming online ASAP!
+
+All features included. No extra fees or upsellings (except for Atbot Teams, where we deciding how to handle seats). Also considering extra storage for media vaults, but the base will be good enough to host your media.
+
+2026-05-04 08:50:36 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Btw today I’m off, urgent stuff I will try to reply DMs but busy day. -2 for first flight 🇮🇹 > 🇨🇳
+
+2026-05-04 18:17:56 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-05-06 10:55:59 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Xi yin ping huan zhou pong xong
+
+2026-05-07 00:44:19 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+I dont understand china Airports
+
+2026-05-07 01:02:38 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-05-07 01:02:38 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+I said like 20 times i will be off and people Keep bumping me, Im in f china with no internet They charged me 5$ to post a story😭😭😭
+
+2026-05-07 01:32:17 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+2/3, Road to shangai
+
+2026-05-07 01:32:18 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+2/3, Road to shangai
+
+2026-05-07 01:32:19 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+2/3, Road to shangai
+
+2026-05-09 10:25:03 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+spend and withdraw your cryptos with sovrae.io/youtweakin
+
+10% discount with link/code "YOUTWEAKIN" (no KYC)
+
+2026-05-10 06:28:23 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-05-10 06:28:41 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+IG issues are 100% IP related and non Doritos related
+
+2026-05-10 06:28:50 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+The error after agreeing TOS
+
+2026-05-10 06:29:07 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+IG did something they fucked most IPs
+
+2026-05-10 06:29:25 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Someone getting crashes as well? Got told 5G data crash 4G data no, weird Asf
+
+2026-05-10 22:52:00 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+My mother came to see me after 2 years, i will bring her to airport in a few then im back with @secretsauce27 to fix and close any support ticket!
+
+2026-05-12 03:26:33 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+For various reasons, we delayed the release of what I was preparing.
+
+But we already have it:
+🔠🔤🔠🔠🔠🔠
+🔠🔠🔤🔠🔠  🔠🔠   🏰 😱
+👇🏻
+
+https://t.me/+oDKOhNFL-ww3NDM0
+
+For now, I will work with 7-8 clients maximum (providers, markets) 
+
+If you are interested in collaborating, leave me a message. @gcastleg
+
+2026-05-12 03:26:45 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Our MM services for:
+Unbans/accounts, and various types of buy/sell transactions
+are now charged at 3%-5% depending on the case.
+
+(Commissions with our marketplace clients are completely separate from these services and are customized.)
+
+Vouches:
+
+https://t.me/+W9VZtNfGlZ81Y2Nk
+
+2026-05-12 04:25:05 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+https://www.stepsecurity.io/blog/mini-shai-hulud-is-back-a-self-spreading-supply-chain-attack-hits-the-npm-ecosystem
+
+2026-05-12 16:41:01 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Doritos works exactly as described. After being scammed twice by developers selling outdated "spoofers" that just didnt work, this has been a breath of fresh air :DD
+The best part is the automated workflow. When i switch containers, the proxy rotates instantly 🔥
+I also checked which device is logged in, and everything is legit.
+Big thanks, worth every penny !!!
+
+2026-05-12 18:24:20 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Avoid LTC until news, we're working on that chain.
+
+2026-05-13 02:18:42 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+just to remember this is from today! see you tonight Aus timezone!
+
+2026-05-13 02:19:32 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-05-14 23:28:19 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Vouch @thehermeticdev 
+Just launched patched ipa and it’s actually ssl unpinned and guide is actually great👍
+
+2026-05-14 23:30:07 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Unpinning kits the best around (iOS)
+
+Unpinned last version +
+Unpinning guide for the app +
+Python patcher used (code) +
+Tools to vibe it in future so you can replicate with barely no skills 
+
+600-1000 depending on app most at 600$
+
+2026-05-14 23:30:33 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Unpin forever the app you choose 😎
+
+2026-05-15 14:54:55 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+I added working hours, easier than the red and green dots stuff. An automated message will pop up if you text me off-hour and i don't have telegram opened.
+
+2026-05-16 02:24:21 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-05-16 02:24:21 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-05-16 02:24:21 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-05-16 02:24:21 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+🚨 COMING SOON 🚨
+
+Introducing the Hive ecosystem. (Brand tbd) 
+
+A next-generation AI content production suite built for creators, agencies, and high-scale media workflows.
+
+⚡ Hive AI Studio
+
+Turn one shoot into a full AI-powered content engine.
+
+Generate, edit, animate, and scale creator content from one streamlined workspace with powerful, cost-effective AI workflows.
+
+Features include:
+
+• AI Image Generation  
+• AI Image Editing  
+• Video From Image  
+• Motion Control  
+• Streamlined LoRA Training  
+• Reusable Creator Styles  
+• Workflow-Based Content Production  
+• High-Volume Asset Management
+
+Train reusable LoRAs in minutes to create consistent creator content at scale while dramatically reducing generation costs and production time.
+
+Create unlimited variations from a single trained workflow without rebuilding prompts every time.
+
+🔥 Faster generation workflows  
+🔥 Cost-effective AI content creation  
+🔥 Consistent creator identity outputs  
+🔥 Built for scalable production pipelines
+
+━━━━━━━━━━━━━━━
+
+⚡ Hive Spoofer
+
+A separate module built for media prep and publishing optimization.
+
+Designed to process AI-generated content before delivery with advanced workflow tooling.
+
+Includes:
+
+• Image Spoofer  
+• Video / Reels Spoofer  
+• AI Marker Remover  
+• Metadata Cleaning  
+• File Optimization Pipelines  
+• Batch Processing Workflows
+
+Built to reduce repeatable file signatures, optimize exports, and prep content for scalable publishing workflows.
+
+Generate → Animate → Prep → Ship.
+
+━━━━━━━━━━━━━━━
+
+Built for:
+✔️ Creators  
+✔️ Agencies  
+✔️ AI media teams  
+✔️ Scalable content operations
+
+Hive AI Studio + Hive Spoofer launching in the coming weeks!
+
+2026-05-16 02:24:48 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+@TheHiveMedia for info!
+
+2026-05-16 13:42:31 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+communicate: 
+doritos will be handled 100% by @secretsauce27
+i will stay as mod of the groupchat. i'm 100% out of doritos, SS will take my side and will handle it. appreciate the time spent here. will stay as mod in the GC providing info about iOS and ensuring a quality groupchat as i allways did. for any doritos enquiry, feel free to DM @secretsauce27 
+for buying licenses, soon in his website.
+one love, hermetic.
+
+My main GC for business https://t.me/+iedsqyzZNtkwMzU0
+
+2026-05-16 13:52:44 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-05-18 17:04:40 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+https://t.me/thegeekside
+
+2026-05-25 09:01:04 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Verified just now: IG will not send SMS code if your IP is flagged, even if the number is OK. No matter what.
+
+2026-05-25 12:23:32 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+@DiddyMigrationBot
+
+2026-05-25 12:41:02 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Available ready-made same zip for Reddit, Threads, Whatsapp and more apps. 
+
+iOS Unpinning made easy and repeatable in future.
+
+2026-05-26 01:54:53 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+I you get cold DMed From people of this group lmk i want to nuke some lurks
+
+2026-05-28 05:41:04 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+https://t.me/thegeekside/618
+
+if you run proxy service, promote it here freely
+
+2026-05-29 02:43:55 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+metamarket service is on mantainance, started orders will be delivered asap and for the rest active orders that has not been started we're refunding today. send wallets in DM
+
+2026-05-29 13:54:28 SS (IG Automation & Tweak Dev) -> DORITOZ 👾:
+Duff is on the way, hmu if you wanna know more 🍻
+
+2026-06-02 05:15:18 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+youtweakin.com/product/gallerycli
+
+2026-06-06 08:36:04 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Opening unlimited access to Atbot beta for 200$ (Threads iOS API panel)
+
+No slot limit, full feature, until release (not known date, min 2 weeks max 1 month)
+
+DM, reopening since tonight to full test everything in deep
+
+2026-06-06 12:04:40 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-06-06 12:04:40 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-06-06 12:04:40 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+iOS threads api, rn we have scheduler, bulk bio, bulk linking, bulk quote posting, single actions, ai text pools, proxy pools, photo vault, bulk pfps, and dm, kinda all for threads almost
+
+photo spoofing: Now every photo upload (feed post + profile picture):
+  - Strips all source metadata (EXIF, XMP, IPTC, ICC, MakerNotes)
+  - Injects iPhone-camera EXIF: Make=Apple, HostComputer=Model, iOS version Software, full DateTime triplet with OffsetTime, per-model LensModel and LensSpecification, realistic
+  ExposureTime/FNumber/ISO/FocalLength
+  - Injects Apple MakerNote (tag 0x927C) with the magic Apple iOS\0\0\x01MM header + AccelerationVector, ContentIdentifier UUID, CameraType, FrontFacingCamera, AF/AE telemetry
+  - Re-encodes with Apple-style asymmetric DQT + per-image optimized Huffman
+  - Embeds sRGB ICC profile
+  - Saves as IMG_NNNN.jpg with mtime synced to synthetic capture time
+
+im looking for adding cupid/capital but rn chatting is manual u can set chatters, i added Teams tab to manage them.
+
+2026-06-07 04:57:05 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-06-07 13:01:51 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+everybody please go report https://t.me/getmetamarket make this channel vanish from tg, deserved. i can't delete it as i was removed.
+
+2026-06-09 13:32:05 SS (IG Automation & Tweak Dev) -> DORITOZ 👾:
+DORITOS 😍
+
+quick showcase of the power it has, create unlimited accounts with totally spoofed fingerprint for each container/account and much more features :)
+
+2026-06-12 15:17:36 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+IG down
+
+2026-06-13 12:39:47 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+that 2 scammers ghosted the customers until the last minute, they never pretended to refund or cover their orders, and they pretend to still using metamarket brand. dont fall. dont give them 1$
+
+2026-06-13 12:39:48 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+this is the people trying to shill u snaps using the brand i grown up.
+
+2026-06-13 12:39:48 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-06-13 12:39:48 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-06-13 12:39:48 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+everybody leave that channel and report it, they can't even sell 2 accs without my marketing and since i quitted their shit they pretend to dm my customers to keep selling while they exited +6 orders and i got to refund them myself from my pocket. they behave like rats, they tried to sneak api accs like non-api accs, they call you all clowns, they exitscam you and then they act like nothing and try to keep selling. go back to work ngers
+
+2026-06-13 12:39:48 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+this 2 cunts, i told you, dont use metamarket name, do it again and i'll expose ur @s
+
+2026-06-13 12:39:48 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+they wanted to sneak u api accs in metamarket and all the beef started when i refused to do that as it would be a scam
+
+2026-06-13 12:39:48 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+this is how they behave with the customers
+
+2026-06-13 12:39:48 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+https://t.me/getmetamarket MASS REPORT
+
+2026-06-13 12:39:58 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-06-13 12:39:48 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+people asked me due to the message they sent through the channel, it's not me, it's that 2 guys, don't order shit from there
+
+2026-06-15 12:54:19 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+https://creep.gg/rooted rip my linktree
+
+2026-06-15 12:54:19 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+help me get into top 3 viewed on the web ❤️
+
+2026-06-15 16:28:27 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+@ for IG bans?
+
+2026-06-18 06:53:36 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+📱 @oksnap 📱
+         tic, tac.
+
+2026-06-21 21:07:56 Hermetic Dev -> DORITOZ 👾:
+New free networking community based on Snapchat traffic! Feel free to join and invite your friends that run snapchat!
+https://t.me/snapreach
+
+2026-06-28 22:46:57 SS (IG Automation & Tweak Dev) -> DORITOZ 👾:
+😀 DORITOS x RootHide 🈷️
+
+for those who use RootHide, doritos will support it soon
+
+2026-07-01 09:57:16 Hermetic Dev -> DORITOZ 👾:
+300 people in @snapreach and 200 in @oksnap and giveaway of 20x 5 accounts 📱 to 20 different members. 
+
+Activity based. No lurkers.
+
+2026-07-07 13:42:22 Hermetic Dev -> DORITOZ 👾:
+Join CapitalAI
+
+2026-07-07 15:51:01 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Non kyc cards for withdraw and pay - Apple Pay and Google Pay 💰
+Crypto top up. Lowest fees.
+
+2026-07-10 01:52:34 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+NEW JAILBREAK WIP BY HUY NGUYEN (LITTLE_34306)
+https://redd.it/1us831h
+@r_jailbreak
+
+2026-07-10 01:52:43 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Get your Raspberry PIs ready!
+
+2026-07-14 06:15:24 Hermetic Dev -> DORITOZ 👾:
+Sovrae.io/youtweakin
+
+Withdraw and spend your cryptos with no kyc (ATM, Google Pay, Apple Pay, with VISA and Mastercard)
+Special discount for my customers!
+
+Join other sovranes that are using their crypto with total freedom IRL.
+
+2026-07-16 05:19:26 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Alert
+
+📱 X Will Become Open Source!
+
+Elon Musk has officially confirmed that X will make its entire platform codebase open source after the team completes reviewing it for security vulnerabilities.
+
+With a fully open-source codebase, users and developers will be able to study X’s inner workings and algorithms, develop third-party tools, extensions, build custom clients and alternative front-ends, create more powerful bots, report bugs, and even use the code for their own projects.
+
+Elon Musk had previously hinted that X would become open source, but officially confirmed it today in a post on X.
+
+💬 Do you think making X open source will make the platform better or worse?
+
+@ConeticNews
+
+2026-07-17 10:29:21 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+https://www.reddit.com/r/jailbreak/comments/1uyt5vp/when_will_we_be_able_to_use_dopamine_3_in_ios_1731/
+
+2026-07-20 06:15:53 Hermetic Dev -> DORITOZ 👾:
+https://github.com/facebook/ThreatExchange
+
+2026-07-22 06:19:56 Hermetic Dev -> DORITOZ 👾:
+NON KYC VIRTUAL AND PHYSICAL CREDIT CARDS
+
+Private, secure, borderless, instant, unlimited. 
+
+Apple Pay ⚡️
+Google Pay 🥰
+ATM withdrawal 🏧
+Low fees 💯
+Crypto topup 💱
+
+Spend up to (per card):
+•20k / tx
+•250k / day
+•1M / month
+
+Withdraw up to (per card):
+•1.5k / day
+•15k / month 
+
+Delivery 5-7 working days DHL 🚛
+Spanish / Italian / English / French support🇪🇸🇮🇹🇫🇷🏴󠁧󠁢󠁥󠁮󠁧󠁿
+
+Get it discounted NOW (click here)
+
+2026-07-23 12:57:50 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+https://www.reddit.com/r/jailbreak/s/77Zqg5wxMz
+
+2026-07-24 13:35:06 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+Decrypt Day is down!
+https://redd.it/1v53vay
+@r_jailbreak
+
+2026-07-25 06:09:40 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+
+
+2026-07-28 15:51:42 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+NON KYC VIRTUAL AND PHYSICAL CREDIT CARDS
+
+Private, secure, borderless, instant, unlimited. 
+
+Apple Pay ⚡️
+Google Pay 🥰
+ATM withdrawal 🏧
+Low fees 💯
+Crypto topup 💱
+
+Spend up to (per card):
+•20k / tx
+•250k / day
+•1M / month
+
+Withdraw up to (per card):
+•1.5k / day
+•15k / month 
+
+Delivery 5-7 working days DHL 🚛
+Spanish / Italian / English / French support🇪🇸🇮🇹🇫🇷🏴󠁧󠁢󠁥󠁮󠁧󠁿
+
+Get it discounted NOW (click here)
+
+2026-07-29 07:11:33 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+🚨 Russia Declares Pavel Durov Wanted Internationally 
+
+Pavel Durov has reportedly been placed on Russia’s international wanted list after the country’s Federal Security Service (FSB) charged him under Part 1.1 of Article 205.1 of the Russian Criminal Code, which covers facilitating terrorist activities.
+
+According to the FSB, Ukrainian intelligence services allegedly used the Telegram dating bot “Leo” to recruit Russian citizens aged 12-22 for acts of sabotage, attacks on police and arson. The agency claims that 46 people have been detained in connection with these cases since July 2025.
+
+➖➖➖➖➖➖➖
+💧 Rainbet.com the #1 Non-KYC Crypto Casino & Sportsbook @Rainbetcom
+
+🔔 Subscribe: @alert
+
+2026-07-30 02:42:23 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+https://owngoal.dev/relaxin/
+
+A13-A17 M1-M2 
+iOS 17.0-17.3.1
+
+2026-08-01 04:11:09 Hermetic Dev | iOS Developer -> DORITOZ 👾:
+W Sovrae (You can do the same with your crypto clicking here)
+

@@ -1,0 +1,662 @@
+2026-06-07 16:05:02 Capo -> Kick Buttowski:
+its very easy
+
+2026-06-07 16:05:13 Capo -> Kick Buttowski:
+we run completely the same setup like them
+
+2026-06-07 16:05:18 Capo -> Kick Buttowski:
+Hey @TheHiveMedia ... I ran through your podcast with Francis once more time. I'd like to know, how are you managing Multiple accounts/instances on each device, farm located in Philippines? Aren't you using proxies? Are the proxies embedded into App/Instance level or what? Can you please put some light on it?
+
+2026-06-07 16:05:46 Capo -> Kick Buttowski:
+all you need is iPhone 7, 8 or X model and latest Ghost 2.0 version to clone and randomize fingerprints
+
+2026-06-08 11:45:27 Kick Buttowski -> Capo:
+Bro.. i searched for ghost 2.0 on google, didn't find it though. Wanna share the source of your purchase?
+
+2026-06-07 16:05:56 Capo -> Kick Buttowski:
+
+
+2026-06-07 16:06:02 Capo -> Kick Buttowski:
+you can run 100s of acc's on same device
+
+2026-06-07 16:07:46 Kick Buttowski -> Capo:
+Damn bro... But that'd require Jailbreaking the iPhone, right?
+
+2026-06-07 16:08:08 Capo -> Kick Buttowski:
+exactly, jailbreak is must to install tweaks
+
+2026-06-07 16:08:18 Capo -> Kick Buttowski:
+it takes like 2 minutes to jailbreak an iPhone it's pretty easy
+
+2026-06-07 16:09:18 Kick Buttowski -> Capo:
+I know bro. I don't mind the technical part. just, not the status
+
+2026-06-07 16:08:56 Kick Buttowski -> Capo:
+Tbh, I live in india, I can get brand new Androids, from Official store, at the same price of used, refurbished iPhone. and I kinda like to run clones on android than iPhone
+
+2026-06-07 16:09:14 Capo -> Kick Buttowski:
+nobody uses Androids for a reason
+
+2026-06-07 16:09:18 Capo -> Kick Buttowski:
+they suck = low trust score
+
+2026-06-07 16:09:26 Kick Buttowski -> Capo:
+Fair enough
+
+2026-06-07 16:09:25 Capo -> Kick Buttowski:
+if they worked everyone would've used androids
+
+2026-06-07 16:10:01 Kick Buttowski -> Capo:
+But Doritoz offer running multiple instances without doing jailbreak. have you ever figured how that is?
+
+2026-06-07 16:10:19 Capo -> Kick Buttowski:
+there's better alternatives like Ghost 2.0
+
+2026-06-07 16:10:23 Capo -> Kick Buttowski:
+cheaper + better
+
+2026-06-07 16:11:21 Kick Buttowski -> Capo:
+Besides, I've come to a decision that I should run 20 instances per device... think like that, one VA, 30 minutes on each app, 10 hours of daily usage
+
+2026-06-07 16:11:57 Kick Buttowski -> Capo:
+I mean, I prefer horizontal scaling in terms of hardware, than vertical scale
+
+2026-06-07 16:12:15 Kick Buttowski -> Capo:
+Do you offer Ghost 2.0 service? 😀
+
+2026-06-07 16:12:36 Capo -> Kick Buttowski:
+no i'm not developer of Ghost, Ghost is most popular tweak for cloning is from known developer
+
+2026-06-07 16:13:19 Kick Buttowski -> Capo:
+Alr... then I appreciate for sharing the insight
+
+2026-06-07 16:12:16 Capo -> Kick Buttowski:
+30 minutes is a lot
+
+2026-06-07 16:13:01 Kick Buttowski -> Capo:
+Bruh, Don't push me, I might just do more horizontal and push it to 45 minuts. 💀
+
+2026-06-07 16:13:20 Capo -> Kick Buttowski:
+whats the point of that haha
+
+2026-06-07 16:13:29 Kick Buttowski -> Capo:
+more humanizing bro
+
+2026-06-07 16:13:42 Capo -> Kick Buttowski:
+just use automation no need for VA
+
+2026-06-07 16:13:45 Capo -> Kick Buttowski:
+that will scroll daily
+
+2026-06-07 16:13:46 Capo -> Kick Buttowski:
+that's what i use
+
+2026-06-07 16:14:22 Kick Buttowski -> Capo:
+I'm also processing that, ngl
+
+2026-06-07 16:15:18 Capo -> Kick Buttowski:
+i have this watch
+
+2026-06-07 16:14:38 Kick Buttowski -> Capo:
+Where can I talk with the Ghost 2.0 team?
+
+2026-06-07 16:15:11 Capo -> Kick Buttowski:
+not sure if he have telegram, i bought from his website
+
+2026-06-07 16:15:34 Capo -> Kick Buttowski:
+
+
+2026-06-07 16:15:35 Capo -> Kick Buttowski:
+
+
+2026-06-07 16:31:36 Kick Buttowski -> Capo:
+Brooooo
+
+2026-06-07 16:46:22 Capo -> Kick Buttowski:
+It says his Discord, spye pumpkin
+
+2026-06-07 16:47:07 Kick Buttowski -> Capo:
+Shit, I've just noticed that
+
+2026-06-07 16:31:41 Kick Buttowski -> Capo:
+It's the script running?
+
+2026-06-07 16:32:16 Kick Buttowski -> Capo:
+does it run on mobile? I thought I'd run on PC, as all mobiles will be connected to PC, so the PC will do the gesture, sweep and everything.
+
+2026-06-07 16:35:05 Capo -> Kick Buttowski:
+It's PC
+
+2026-06-07 16:35:26 Capo -> Kick Buttowski:
+I just control it from the phone, i have control panel
+
+2026-06-07 16:36:19 Kick Buttowski -> Capo:
+I have thought the same bro
+
+2026-06-07 16:36:56 Kick Buttowski -> Capo:
+How did you wrote the script? I might need to hire dev for that/... do you havve any resources that I can use with claude to write the automation script for me?
+
+2026-06-07 16:38:33 Capo -> Kick Buttowski:
+Nah, you either are developer yourself and know how things works or buy ready made
+
+2026-06-07 16:38:06 Capo -> Kick Buttowski:
+I just bought it
+
+2026-06-07 16:38:11 Capo -> Kick Buttowski:
+I am not developer myself
+
+2026-06-07 16:38:41 Capo -> Kick Buttowski:
+GPT won't help with such advance scripts
+
+2026-06-07 16:38:54 Kick Buttowski -> Capo:
+from whom did you bought bro?
+
+2026-06-07 16:46:27 Capo -> Kick Buttowski:
+Watermark
+
+2026-06-07 16:46:42 Capo -> Kick Buttowski:
+If you are purchasing something say i send you, i might get some sale in the future
+
+2026-06-07 16:47:49 Kick Buttowski -> Capo:
+Sure bro
+
+2026-06-08 11:35:17 Kick Buttowski -> Capo:
+Hey man...  Have you tried running Multiple Snapchat from one device?
+
+2026-06-08 11:35:39 Capo -> Kick Buttowski:
+Yes
+
+2026-06-08 11:35:58 Capo -> Kick Buttowski:
+Used to do spotlight on Snapchat before
+
+2026-06-08 11:41:15 Kick Buttowski -> Capo:
+Bro... Is it similar to IG. The config? Like multiple instances of Snap, each will spoof device fingerprint, etc?
+
+2026-06-08 11:41:42 Capo -> Kick Buttowski:
+Same yeah
+
+2026-06-08 11:45:35 Kick Buttowski -> Capo:
+Like TG or Discord something?
+
+2026-06-08 11:45:54 Capo -> Kick Buttowski:
+The developer don't have TG, it's website
+
+2026-06-08 11:45:59 Capo -> Kick Buttowski:
+Let met find it, one second
+
+2026-06-08 11:46:09 Kick Buttowski -> Capo:
+Btw, I sent friend requests to spyepumpkin as we don't share some server, maybe
+
+2026-06-08 11:47:08 Capo -> Kick Buttowski:
+Whats your username i will tell him to accept you
+
+2026-06-08 11:47:50 Kick Buttowski -> Capo:
+Moz_46499
+
+2026-06-08 11:48:02 Capo -> Kick Buttowski:
+Will tell him to accept you
+
+2026-06-08 11:47:17 Capo -> Kick Buttowski:
+https://limewire.com/d/yIoUG
+
+2026-06-08 11:47:28 Capo -> Kick Buttowski:
+Here btw maybe the download works try
+
+2026-06-08 11:48:31 Kick Buttowski -> Capo:
+Yeah, it's expired bro
+
+2026-06-08 11:51:06 Capo -> Kick Buttowski:
+Because the download link expires
+
+2026-06-08 11:47:18 Capo -> Kick Buttowski:
+
+
+2026-06-14 11:06:23 Capo -> Kick Buttowski:
+Not sure to be honest, try contacting them on gmail, that's the only contact i have and know
+
+2026-06-08 11:47:34 Capo -> Kick Buttowski:
+I bought it months ago, probably it's expired by now
+
+2026-06-08 11:47:42 Capo -> Kick Buttowski:
+https://b335.bgng.io/ This is the developer's website
+
+2026-06-14 11:05:46 Kick Buttowski -> Capo:
+Yoo bro. Is there any way I can talk with their team and stuff?
+
+2026-06-08 11:48:59 Capo -> Kick Buttowski:
+Yeah i bought it like 3 months ago
+
+2026-06-08 11:49:39 Kick Buttowski -> Capo:
+One purchase per device? What if you reset the device and stuff... How would you restore your purchase then?
+
+2026-06-08 11:50:38 Capo -> Kick Buttowski:
+No, if you save the .deb file you can install it on as many devices as you want
+
+2026-06-08 11:51:07 Kick Buttowski -> Capo:
+So, one file, unlimited instances in unlimited device?
+
+2026-06-08 11:51:13 Capo -> Kick Buttowski:
+Yeah
+
+2026-06-08 11:51:20 Capo -> Kick Buttowski:
+Just save the .deb file somewhere
+
+2026-06-08 11:51:48 Kick Buttowski -> Capo:
+Bruh! That'd be super cheap by adding multiple devices then
+
+2026-06-08 11:52:09 Capo -> Kick Buttowski:
+Yeah it's not that expensive
+
+2026-06-08 11:53:47 Kick Buttowski -> Capo:
+How much did it cost ya? $200?
+
+2026-06-08 11:54:01 Capo -> Kick Buttowski:
+Something like that, 150 or 200
+
+2026-06-08 11:54:47 Kick Buttowski -> Capo:
+Yeah... I got you. I just saw they have multiple products. Including the proxy manager, do you use those?
+
+2026-06-08 11:55:33 Capo -> Kick Buttowski:
+Will send you screenshot of what i use later
+
+2026-06-08 12:04:39 Capo -> Kick Buttowski:
+
+
+2026-06-14 14:17:04 Kick Buttowski -> Capo:
+Had a question on your orbit. Doesn't ghost or Portal spoof location based on Proxy?
+
+2026-06-08 12:04:48 Capo -> Kick Buttowski:
+For IG you just need Ghost + Portal
+
+2026-06-08 12:05:10 Capo -> Kick Buttowski:
+Orbit is only if you want to target specific country more like USA
+
+2026-06-08 12:05:29 Kick Buttowski -> Capo:
+And bypass is to bypass JB status, ain't it?
+
+2026-06-08 12:05:43 Capo -> Kick Buttowski:
+Exactly, but IG don't have jailbreak detection
+
+2026-06-08 12:05:46 Capo -> Kick Buttowski:
+So its useless
+
+2026-06-08 12:08:21 Kick Buttowski -> Capo:
+So... $600 worth of product... Amazing bro.
+
+2026-06-08 12:08:31 Kick Buttowski -> Capo:
+Damn you run tinder too!
+
+2026-06-08 12:08:37 Capo -> Kick Buttowski:
+Its bad lately
+
+2026-06-08 12:08:39 Capo -> Kick Buttowski:
+A lot of bans
+
+2026-06-08 12:08:51 Kick Buttowski -> Capo:
+I got you bro
+
+2026-06-08 12:08:45 Capo -> Kick Buttowski:
+EU works, but USA hard
+
+2026-06-14 11:50:17 Capo -> Kick Buttowski:
+Actually i have his Discord as well, just remembered
+
+2026-06-14 11:50:19 Capo -> Kick Buttowski:
+Do you want it ?
+
+2026-06-14 11:51:55 Capo -> Kick Buttowski:
+
+
+2026-06-14 13:11:25 Kick Buttowski -> Capo:
+I'm really fed up with recent flags of IG bro
+
+2026-06-14 13:11:50 Capo -> Kick Buttowski:
+Where do you run those acc's
+
+2026-06-14 13:11:35 Kick Buttowski -> Capo:
+Can we discuss about marketing?
+
+2026-06-14 13:11:56 Capo -> Kick Buttowski:
+Androids or GeeLark maybe?
+
+2026-06-14 13:12:08 Kick Buttowski -> Capo:
+Single account bro. Non JB iPhone 12
+
+2026-06-14 13:12:27 Kick Buttowski -> Capo:
+I got flagged on content level tbh
+
+2026-06-14 13:12:50 Kick Buttowski -> Capo:
+
+
+2026-06-14 13:13:04 Capo -> Kick Buttowski:
+Ahh well that's content issue yeah
+
+2026-06-14 13:13:48 Kick Buttowski -> Capo:
+So bro... can I ask you about your content and strategy on IG to get maximum traffic with minimum friction?
+
+2026-06-14 13:14:43 Capo -> Kick Buttowski:
+Create new ig, follow tons of OF models, scroll feed page and you will have tons of content ideas everyday
+
+2026-06-14 13:15:16 Kick Buttowski -> Capo:
+I have that bro. What type of content do you copy? Talking heads, dance reels or something else?
+
+2026-06-14 13:12:55 Capo -> Kick Buttowski:
+Not sure why than, i have 0 flags, i just randomize device fingerprints for each clone so IG thinks its 1 account / 1 device
+
+2026-06-14 13:13:08 Kick Buttowski -> Capo:
+This was of Friday, removed these, yesterday got four more
+
+2026-06-14 13:13:11 Kick Buttowski -> Capo:
+removed all
+
+2026-06-14 13:13:29 Capo -> Kick Buttowski:
+It's not your device, just work on your content
+
+2026-06-14 13:13:41 Capo -> Kick Buttowski:
+See what other models are posting on IG, copy their reels
+
+2026-06-14 13:14:00 Kick Buttowski -> Capo:
+That's what nuked me bro
+
+2026-06-14 13:14:07 Kick Buttowski -> Capo:
+all of these are talking heads
+
+2026-06-14 13:14:17 Kick Buttowski -> Capo:
+yk, typical stuff most model says
+
+2026-06-14 13:14:36 Kick Buttowski -> Capo:
+only difference is, they got 10k to couple hundred k followers
+
+2026-06-14 13:14:41 Kick Buttowski -> Capo:
+and I got only 2.5k
+
+2026-06-14 13:14:45 Capo -> Kick Buttowski:
+That's what i do
+
+2026-06-14 13:14:50 Capo -> Kick Buttowski:
+I just copy their reels
+
+2026-06-14 13:15:37 Capo -> Kick Buttowski:
+Dance, random videos
+
+2026-06-14 13:15:59 Kick Buttowski -> Capo:
+How long you've been running this IG bro, and what's follower count?
+
+2026-06-14 13:15:50 Capo -> Kick Buttowski:
+No talking, no dance, just showing off the body
+
+2026-06-14 13:16:13 Kick Buttowski -> Capo:
+Bruh, I don't even need to show the body
+
+2026-06-14 13:16:06 Capo -> Kick Buttowski:
+I got 100+ acc's
+
+2026-06-14 13:16:11 Capo -> Kick Buttowski:
+Combined it's couple M's
+
+2026-06-14 13:16:46 Kick Buttowski -> Capo:
+Alr... what's the lowest and max you got after running on IG for 30 days?
+
+2026-06-14 13:16:40 Capo -> Kick Buttowski:
+Weird than why your content is getting flagged
+
+2026-06-14 13:17:03 Kick Buttowski -> Capo:
+Let me share an reference, hope you'd get the idea
+
+2026-06-14 13:17:02 Capo -> Kick Buttowski:
+Well i funnel also traffic from Tinder to IG
+
+2026-06-14 13:17:21 Capo -> Kick Buttowski:
+Max followers i've got is around 50k in a month
+
+2026-06-14 13:17:45 Capo -> Kick Buttowski:
+Around there
+
+2026-06-14 13:24:19 Kick Buttowski -> Capo:
+Bro...
+
+2026-06-14 13:24:26 Kick Buttowski -> Capo:
+I use similar script https://www.instagram.com/reel/DZfeVcfOPo3/
+
+2026-06-14 13:24:33 Kick Buttowski -> Capo:
+My account got nuked in all ways
+
+2026-06-14 13:24:40 Kick Buttowski -> Capo:
+while these are still alive man!
+
+2026-06-14 13:26:54 Kick Buttowski -> Capo:
+https://www.instagram.com/reel/DZh6Cr8P9Ai/
+
+Or these, only the f word is muted
+
+2026-06-14 13:26:57 Kick Buttowski -> Capo:
+still bro
+
+2026-06-14 13:26:58 Kick Buttowski -> Capo:
+still
+
+2026-06-14 13:27:03 Kick Buttowski -> Capo:
+why me! 😓
+
+2026-06-14 13:33:43 Capo -> Kick Buttowski:
+No idea
+
+2026-06-14 13:33:57 Capo -> Kick Buttowski:
+Low trust score acc's maybe not sure
+
+2026-06-14 13:34:21 Capo -> Kick Buttowski:
+Once 1 account gets banned you cant create new acc on that phone even if you do factory reset
+
+2026-06-14 13:34:23 Capo -> Kick Buttowski:
+It will get banned
+
+2026-06-14 13:34:27 Capo -> Kick Buttowski:
+Maybe its that
+
+2026-06-14 13:34:39 Capo -> Kick Buttowski:
+thats why jailbreak is better
+
+2026-06-14 19:14:58 Kick Buttowski -> Capo:
+So bro. Let's say I got banned on my current iPhone. Then, I jailbreak it, spoof everything. Fingerprint, location, proxy, all. Will that prevent future bans on that device?
+
+2026-06-14 13:35:12 Kick Buttowski -> Capo:
+I get it bro. Right now... I'll focus on creating clone content like you instead
+
+2026-06-14 13:35:23 Kick Buttowski -> Capo:
+can't worry about shii with all flags right now
+
+2026-06-14 13:35:37 Capo -> Kick Buttowski:
+yeah
+
+2026-06-14 13:35:42 Capo -> Kick Buttowski:
+thats your best bet
+
+2026-06-14 13:36:09 Kick Buttowski -> Capo:
+Yes bro
+
+2026-06-14 13:36:17 Kick Buttowski -> Capo:
+That's the only thing I need to do now
+
+2026-06-14 13:36:27 Capo -> Kick Buttowski:
+go for it
+
+2026-06-14 13:36:49 Kick Buttowski -> Capo:
+Thanks bro. It helped me a lot
+
+2026-06-14 13:37:12 Kick Buttowski -> Capo:
+how many creator are you running right now?
+Do you do AI, Hybrid or Legacy OFM bro?
+
+2026-06-14 13:37:58 Capo -> Kick Buttowski:
+3
+
+2026-06-14 13:38:10 Kick Buttowski -> Capo:
+Amazing bro
+
+2026-06-14 13:37:44 Capo -> Kick Buttowski:
+Hybrid
+
+2026-06-14 13:37:54 Kick Buttowski -> Capo:
+I'm full AI bro
+
+2026-06-14 13:38:08 Capo -> Kick Buttowski:
+I do AI for marketing
+
+2026-06-14 13:38:12 Capo -> Kick Buttowski:
+But on OF only real PPVs
+
+2026-06-14 13:38:22 Kick Buttowski -> Capo:
+Gotcha bro
+
+2026-06-14 13:38:40 Kick Buttowski -> Capo:
+You've already passed 30k MRR, isn't it?
+
+2026-06-14 13:38:49 Capo -> Kick Buttowski:
+Double that
+
+2026-06-14 13:39:12 Capo -> Kick Buttowski:
+~40ish paid a day
+
+2026-06-14 13:39:55 Capo -> Kick Buttowski:
+a day 40 paid subs
+
+2026-06-14 13:39:21 Capo -> Kick Buttowski:
+with good chatting thats 50-60k
+
+2026-06-14 13:39:35 Kick Buttowski -> Capo:
+60k a day!
+
+2026-06-14 13:39:41 Kick Buttowski -> Capo:
+I thought per month!
+
+2026-06-14 13:39:46 Capo -> Kick Buttowski:
+per month
+
+2026-06-14 13:41:47 Kick Buttowski -> Capo:
+Yooo... you have like 100s IGs for 3 model?? It's like 30+ per model?
+
+2026-06-14 13:42:15 Capo -> Kick Buttowski:
+100 in total
+
+2026-06-14 13:42:20 Capo -> Kick Buttowski:
+Yes
+
+2026-06-14 14:09:25 Kick Buttowski -> Capo:
+Wah! 🤯 Nice bro.
+
+2026-06-14 14:10:01 Kick Buttowski -> Capo:
+I'll request you, as you're getting around 20k mrr... Try to scale vertically bro. You should get more subs per day out of those 100 accs.
+
+2026-06-14 14:13:23 Capo -> Kick Buttowski:
+Reinvest the profits, you will be at 60k in no time
+
+2026-06-14 14:13:57 Kick Buttowski -> Capo:
+That's the plan bro. I need to make profit, then start re-investing it
+
+2026-06-14 14:10:39 Kick Buttowski -> Capo:
+I mean, that's what you should aim imo.
+
+2026-06-14 14:11:09 Capo -> Kick Buttowski:
+Yeah
+
+2026-06-14 14:11:17 Capo -> Kick Buttowski:
+I'm scaling more and more daily
+
+2026-06-14 14:11:20 Capo -> Kick Buttowski:
+Numbers are going up
+
+2026-06-14 14:14:13 Capo -> Kick Buttowski:
+If your doing full ai
+
+2026-06-14 14:14:18 Capo -> Kick Buttowski:
+The profit must be good than
+
+2026-06-14 14:14:36 Kick Buttowski -> Capo:
+Yes bro. Margin is higher
+
+2026-06-14 14:17:37 Capo -> Kick Buttowski:
+they dont
+
+2026-06-14 14:17:49 Capo -> Kick Buttowski:
+portal is only proxy, ghost spoofs other things not gps location
+
+2026-06-14 14:19:09 Kick Buttowski -> Capo:
+Alr bro... So, Ghost needs a combo of apps to work on. Around $600 in total.
+
+BTW, how frequent they update their apps?
+
+2026-06-14 14:20:22 Capo -> Kick Buttowski:
+go with just ghost first try, ghost is most important it might work with it alone
+
+2026-06-14 14:20:00 Capo -> Kick Buttowski:
+yeah you update them in sileo if theres an update
+
+2026-06-14 15:52:30 Kick Buttowski -> Capo:
+Alr bro. I just want to keep all safety measures in place
+
+2026-06-14 19:15:14 Capo -> Kick Buttowski:
+it will
+
+2026-06-14 19:15:20 Capo -> Kick Buttowski:
+but you cant jailbreak iPhone 12
+
+2026-06-14 19:16:23 Kick Buttowski -> Capo:
+Good point. What device is ideal for JB?
+
+2026-06-14 19:16:41 Capo -> Kick Buttowski:
+7, 8, X
+
+2026-06-14 19:30:33 Kick Buttowski -> Capo:
+Bruh. You just saved me a shit load of money.
+
+2026-06-14 19:32:09 Kick Buttowski -> Capo:
+BTW, will it matter, in terms of trust score, if I run with iPhone 7? Cause I'm gonna spoof the device details.. the device fingerprint can be of latest iPhones, right? Like the instances you're running, which latest iPhone you get listed there,?
+
+2026-06-14 19:32:43 Capo -> Kick Buttowski:
+Watch
+
+2026-06-14 19:32:59 Capo -> Kick Buttowski:
+
+
+2026-06-14 19:32:59 Capo -> Kick Buttowski:
+
+
+2026-06-14 19:32:59 Capo -> Kick Buttowski:
+
+
+2026-06-14 19:32:59 Capo -> Kick Buttowski:
+
+
+2026-06-14 19:33:12 Capo -> Kick Buttowski:
+In Ghost you spoof your iOS and iPhone model to newer one
+
+2026-06-14 19:33:19 Capo -> Kick Buttowski:
+So the app thinks you are using new iPhone
+
+2026-06-14 19:33:55 Kick Buttowski -> Capo:
+Yeah... That's what I meant. If I can get iPhone 14 on iPhone 7... That'd be some next level shii bro
+
+2026-06-14 19:34:07 Capo -> Kick Buttowski:
+You can with Ghost
+
+2026-06-24 15:18:33 Capo -> Kick Buttowski:
+How's it going with the IG bans
+
+2026-06-24 15:19:08 Kick Buttowski -> Capo:
+I was flagged bro. Got lifted. Will start posting content today
+
+2026-06-24 15:19:17 Kick Buttowski -> Capo:
+After like a months of break
+
+2026-06-24 15:19:34 Capo -> Kick Buttowski:
+I see, good luck
+
+2026-06-24 15:19:48 Capo -> Kick Buttowski:
+On the same acc's? most likely again will get flagged
+
+2026-06-24 15:19:49 Capo -> Kick Buttowski:
+But try
+
+2026-06-24 15:23:05 Kick Buttowski -> Capo:
+I'm gonna change the content type entirely. Snapchat Verticals, no sexual stuff. Carousels with proper dressed up
+

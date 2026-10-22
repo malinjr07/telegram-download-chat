@@ -37,7 +37,6 @@ ENV/
 # Project specific
 *.session
 *.json
-*.txt
 !requirements*.txt
 !test*.json
 # e2e output dir (keep the dir tracked, ignore its contents)

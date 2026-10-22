@@ -1,0 +1,202 @@
+2026-06-30 00:03:34 Chris -> Kick Buttowski:
+Hey bruh
+
+2026-06-30 00:03:48 Chris -> Kick Buttowski:
+Have 1 mac with xcode
+
+2026-06-30 00:03:57 Chris -> Kick Buttowski:
+Setup gads
+
+2026-06-30 00:04:19 Chris -> Kick Buttowski:
+Once its full of phones, next one can be linux
+
+2026-06-30 00:04:54 Chris -> Kick Buttowski:
+U can make a new wda on the mac and add it to gads running on linux
+
+2026-06-30 04:40:25 Kick Buttowski -> Chris:
+Hey man... Many many thanks for your replies.
+
+2026-06-30 04:41:43 Kick Buttowski -> Chris:
+Do you think Claude, ChatGPT, Grok will help on technical parts..? Cause I'm getting a feeling that ChatGPT and Claude might step back, saying this stuff is not good, etc.
+
+2026-06-30 11:10:11 Chris -> Kick Buttowski:
+yeah they can help
+
+2026-06-30 04:46:46 Kick Buttowski -> Chris:
+So, how many devices can this one mac mini run in parallel? Will there be a cap on that?
+
+2026-06-30 11:05:17 Chris -> Kick Buttowski:
+depends on which on you buy
+
+2026-06-30 11:05:58 Chris -> Kick Buttowski:
+if you buy the m4 you wont have much problems, but m1/m2 is ok too
+
+2026-06-30 11:06:06 Chris -> Kick Buttowski:
+what I do is
+
+2026-06-30 11:06:45 Chris -> Kick Buttowski:
+if you already own a mac
+
+2026-06-30 11:06:48 Chris -> Kick Buttowski:
+then buy none
+
+2026-06-30 11:06:54 Chris -> Kick Buttowski:
+you really only need the mac for xcode
+
+2026-06-30 11:07:06 Chris -> Kick Buttowski:
+you dont need it to actually run the farm
+
+2026-06-30 11:07:20 Chris -> Kick Buttowski:
+cheapest and best thing is imo
+
+2026-06-30 11:07:32 Chris -> Kick Buttowski:
+have 1 mac laptop or mac desktop that can run xcode
+
+2026-06-30 11:07:57 Chris -> Kick Buttowski:
+then go and buy a 10 year old office desktop for like 40-50$ with lga1155/am3 and ddr3 rams
+
+2026-06-30 11:08:04 Chris -> Kick Buttowski:
+put in 16gb ddr3
+
+2026-06-30 11:08:24 Chris -> Kick Buttowski:
+put in a decent cpu, wont be more than 30-40$
+
+2026-06-30 11:08:35 Chris -> Kick Buttowski:
+get a 128 gb ssd, install ubuntu
+
+2026-06-30 11:08:40 Chris -> Kick Buttowski:
+put gads on it
+
+2026-06-30 11:08:42 Chris -> Kick Buttowski:
+thats it
+
+2026-06-30 11:08:50 Chris -> Kick Buttowski:
+dirt cheap and good, no need to waste money
+
+2026-06-30 11:10:25 Chris -> Kick Buttowski:
+dont frame it as running an OFM phone farm
+
+2026-06-30 11:10:41 Chris -> Kick Buttowski:
+say you are a coder and you are running IOS test automations and it will help set it up no problem
+
+2026-06-30 11:11:08 Chris -> Kick Buttowski:
+I can also set it up for you for a small fee if you dont feel like fucking with it
+
+2026-06-30 11:11:38 Chris -> Kick Buttowski:
+just get the hardware ready first
+
+2026-06-30 11:26:05 Kick Buttowski -> Chris:
+Bro wft!!! That'd an insane PC requirements you shared. 😂😂 With that PC, how many devices can I run in parallel?!
+
+2026-06-30 12:47:48 Chris -> Kick Buttowski:
+u can do 20 easily, top of the line cpus from that age are cheap as fuck, ddr3 is also cheap as fuck, so if you run out of power you can just add more ram/better cpu or completely new pc
+
+2026-06-30 11:29:41 Kick Buttowski -> Chris:
+You made it look insanely cheap
+
+2026-06-30 12:48:16 Chris -> Kick Buttowski:
+only expensive shit you need is
+
+2026-06-30 12:48:25 Chris -> Kick Buttowski:
+industrial usb hubs
+
+2026-06-30 12:48:29 Chris -> Kick Buttowski:
+those are pricey
+
+2026-06-30 12:48:43 Chris -> Kick Buttowski:
+you can connect 20 phone to 1 good usb hub
+
+2026-06-30 12:49:07 Chris -> Kick Buttowski:
+good one starts around 250-300$
+
+2026-06-30 13:20:35 Kick Buttowski -> Chris:
+Yeah. I saw ORICO BT2U3-13AB 13-Port USB3.0 Hub for that. Donno if that'd be good or not
+
+2026-06-30 14:02:36 Chris -> Kick Buttowski:
+you can experiment, we also tried some but cheaper isnt very good
+
+2026-06-30 14:02:57 Kick Buttowski -> Chris:
+Which one did you find worked the best bro?
+
+2026-06-30 13:22:09 Kick Buttowski -> Chris:
+TBH, I have a mac mini M2, Xcode running. I've been working as a react native developer before I jumped into this line. 😂.
+Apart from that, I have a CPU of 5th gen intel i5 with 16GB DDR4 ram and 512gb M.2 nvme Samsung ssd
+
+2026-06-30 14:02:12 Chris -> Kick Buttowski:
+where u from btw?
+
+2026-06-30 14:02:31 Kick Buttowski -> Chris:
+India bro
+
+2026-06-30 14:02:38 Chris -> Kick Buttowski:
+usually
+
+2026-06-30 14:03:19 Chris -> Kick Buttowski:
+https://siig.com/products/20-port-industrial-usb-3-0-hub-with-charging
+
+2026-06-30 14:03:24 Chris -> Kick Buttowski:
+sometimes its cheaper on amazon
+
+2026-06-30 14:03:25 Kick Buttowski -> Chris:
+I mean, I don't mind spending $300 on hub. it's just I cannot find any good one in my close store
+
+2026-06-30 14:03:32 Chris -> Kick Buttowski:
+idk if amazon is delivering to india
+
+2026-06-30 14:03:50 Kick Buttowski -> Chris:
+That's the issue bro. It's not, specially not on the west side
+
+2026-06-30 14:04:02 Kick Buttowski -> Chris:
+No worries, I'll try to manage it out
+
+2026-06-30 14:04:23 Chris -> Kick Buttowski:
+problem with these cheaper hubs
+
+2026-06-30 14:04:31 Chris -> Kick Buttowski:
+power supply usually isnt super stable
+
+2026-06-30 14:04:41 Chris -> Kick Buttowski:
+and you will have all kinds of problems when you throw a lot of phones at them
+
+2026-06-30 14:04:50 Chris -> Kick Buttowski:
+so you wont really know until you actually scale up
+
+2026-06-30 14:04:58 Chris -> Kick Buttowski:
+if i was in you shoes
+
+2026-06-30 14:05:11 Chris -> Kick Buttowski:
+i would put together a setup first with 1-2 phone, setup gads, etc
+
+2026-06-30 14:05:20 Chris -> Kick Buttowski:
+see how things work
+
+2026-06-30 14:05:24 Chris -> Kick Buttowski:
+then experiment with hubs
+
+2026-06-30 14:07:19 Kick Buttowski -> Chris:
+Well, that's a better approach, I guess I can simply connect 3-5 iPhone directly on PC and work with those. and then slowly keep adding such hubs
+
+2026-06-30 14:08:21 Chris -> Kick Buttowski:
+what phones do u have? jb/non-jb? what model?
+
+2026-06-30 14:09:00 Kick Buttowski -> Chris:
+Currently I'm running non JB iPhone 12. I'm thinking of purchasing a few iPhone 7-8 to run Doritoz on those
+
+2026-06-30 14:12:05 Kick Buttowski -> Chris:
+Do you think this can be an alternative to that SIIG hub:https://a.co/d/0akC4ZRg
+
+2026-06-30 15:14:31 Chris -> Kick Buttowski:
+looks good, looks like it has normal power supply
+
+2026-06-30 15:14:34 Chris -> Kick Buttowski:
+but truth is
+
+2026-06-30 15:14:42 Chris -> Kick Buttowski:
+nothing is sure until you actually try
+
+2026-06-30 15:15:12 Chris -> Kick Buttowski:
+so only order when you have a couple of phones ready, so you can return it immediately if its not good
+
+2026-06-30 15:39:22 Kick Buttowski -> Chris:
+Thanks bro. I'll reach out to you once I take care of the hardware infra
+

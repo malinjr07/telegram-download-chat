@@ -1,0 +1,302 @@
+2026-05-18 16:58:00 Hermetic Dev -> The Geek Side:
+Free Resources and Links
+
+2026-05-18 16:59:38 Hermetic Dev -> The Geek Side:
+
+
+2026-05-18 19:05:44 The Geek Side -> The Geek Side:
+github.com/yaziradevteam/pulsechatai
+
+2026-05-19 12:44:58 The Geek Side -> The Geek Side:
+https://github.com/ivRodriguezCA/RE-iOS-Apps
+
+2026-05-19 12:44:59 The Geek Side -> The Geek Side:
+Useful for people that want to get started into RE ios apps
+
+2026-05-19 13:40:30 The Geek Side -> The Geek Side:
+
+
+2026-05-19 16:47:52 The Geek Side -> The Geek Side:
+https://github.com/yaziradevteam/DC-ssl-unpinned
+
+2026-05-19 16:47:58 The Geek Side -> The Geek Side:
+https://github.com/yaziradevteam/snap-browser-x-api-reg
+
+2026-05-19 16:48:10 The Geek Side -> The Geek Side:
+https://github.com/yaziradevteam/comfyui-instaraw-zimage-v2-0
+
+2026-05-19 16:48:38 The Geek Side -> The Geek Side:
+https://github.com/hermeticdev23/appium-ios-win-boilerplate-lite
+
+old ahh boilerplate for running appium on windows capped at 5 devices
+tkinter ui
+
+2026-05-19 16:51:05 The Geek Side -> The Geek Side:
+https://github.com/MethodWhite/synapsis
+
+2026-05-19 16:51:40 The Geek Side -> The Geek Side:
+https://github.com/iosre/iOSAppReverseEngineering
+
+2026-05-26 05:37:06 8534160739 -> The Geek Side:
+Ah useful! I'll save it for a read. 😄
+
+2026-05-31 05:10:20 8534160739 -> The Geek Side:
+Goldmine for starters tbh.
+
+2026-05-19 16:51:47 The Geek Side -> The Geek Side:
+https://github.com/lexiforest/curl_cffi
+
+2026-05-19 16:53:44 The Geek Side -> The Geek Side:
+import requests
+import re
+from curl_cffi import requests as curl_requests
+
+proxy = ""
+host, port, user, password = proxy.split(":")
+
+proxies = {
+    "http": f"socks5://{user}:{password}@{host}:{port}",
+    "https": f"socks5://{user}:{password}@{host}:{port}",
+}
+
+response = requests.get("https://httpbin.org/ip", proxies=proxies, timeout=10)
+ip = response.json()["origin"]
+print(f"IP: {ip}")
+
+scam_url = f"https://scamalytics.com/ip/{ip}"
+scam_response = curl_requests.get(scam_url, impersonate="chrome")
+
+match = re.search(r'Fraud Score: (\d+)', scam_response.text)
+fraud_score = int(match.group(1)) if match else None
+print(f"Fraud Score: {fraud_score}")
+
+Proxy Fraud Score Checker
+
+2026-05-19 16:53:45 The Geek Side -> The Geek Side:
+
+
+2026-05-28 04:48:00 Karl Popper -> The Geek Side:
+does this cloners work?
+
+2026-05-28 05:06:05 8534160739 -> The Geek Side:
+Only one way to find out 😛
+
+2026-05-19 16:53:45 The Geek Side -> The Geek Side:
+https://github.com/hermeticdev23/GeraniumCLI
+
+2026-05-19 16:53:46 The Geek Side -> The Geek Side:
+
+
+2026-05-19 16:53:46 The Geek Side -> The Geek Side:
+
+
+2026-05-19 16:53:47 The Geek Side -> The Geek Side:
+https://workers.io/blog/autonomous-mobile-pentesting/
+
+2026-05-19 16:53:47 The Geek Side -> The Geek Side:
+
+
+2026-05-19 16:53:48 The Geek Side -> The Geek Side:
+https://github.com/proxifly/free-proxy-list
+
+2026-05-19 16:53:50 The Geek Side -> The Geek Side:
+https://github.com/mertizci/noai-watermark
+
+2026-05-19 16:53:50 The Geek Side -> The Geek Side:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal
+
+Historical ECMAscript update. RIP Date object. Hi Temporal API!
+
+2026-05-19 16:53:51 The Geek Side -> The Geek Side:
+https://github.com/00quebec/Synthid-Bypass
+
+2026-05-25 15:18:11 CEO -> The Geek Side:
+
+
+2026-05-25 15:18:12 CEO -> The Geek Side:
+
+
+2026-05-28 04:43:28 8534160739 -> The Geek Side:
+
+
+2026-05-28 04:47:37 Hermetic Dev -> The Geek Side:
+## Weaknesses (Known)
+
+### Jailbreak denial-of-service
+On a jailbroken device, service.isSupported may return false depending on iOS version + jailbreak combination. Some apps treat "App Attest unsupported" as "benign user on older device" rather than a spoof indicator, giving the attacker a silent degradation path. Apps should distinguish iOS-version-based non-support (benign) from jailbreak-triggered non-support (spoof).
+
+### Server-side binding only as strong as enforcement
+App Attest's cryptographic guarantees only matter if the server REQUIRES a valid assertion on every critical request. Servers that degrade to "no assertion" on failure lose the guarantee.
+
+### SE compromise
+The only theoretical path around App Attest is a Secure Enclave compromise — historically very rare, but (a) checkm8 / sep variants, (b) SEP exploits are in scope. See [[Architecture/SEP]].
+
+### Rate-limit behavior
+Apple rate-limits attestKey per-device. Attackers farming many new attestations per device hit the rate limit, which is an intentional design choice but can cause support-load on genuinely-new legitimate users (shared family iPads, etc.).
+
+## Why This Is the Primary Counter-Bypass
+Across every bypass documented in this vault, App Attest is the single primitive that most reliably survives:
+- Container-swap (key is per-device, not per-container).
+- DeviceCheck DNS block (different endpoint).
+- In-process hooks (key outside process).
+- IDFA spoofing (orthogonal surface).
+- IDFV spoofing (orthogonal surface).
+- Filesystem-root attacker (key in SE, not filesystem).
+
+Many banking / crypto-wallet RASP SDKs (Appdome, Guardsquare iXGuard, Promon SHIELD) integrate App Attest attestation as a foundational signal layer.
+
+2026-05-28 14:49:16 1631533146 -> The Geek Side:
+Ts old af
+
+2026-05-28 14:49:40 8534160739 -> The Geek Side:
+Mashallah
+
+2026-05-28 04:48:36 Hermetic Dev -> The Geek Side:
+@barrisov 2 gifts related to what baris sent now
+
+2026-05-28 04:48:36 Hermetic Dev -> The Geek Side:
+
+
+2026-05-28 04:48:50 Hermetic Dev -> The Geek Side:
+need to dig deeper but here you go
+
+2026-05-31 11:23:10 CEO -> The Geek Side:
+https://whox.com/blog/antidetect-detection
+
+2026-06-25 04:34:26 8217189218 -> The Geek Side:
+Goldmine
+
+2026-06-14 06:18:26 CEO -> The Geek Side:
+
+
+2026-06-14 06:18:26 CEO -> The Geek Side:
+An old hardware requirements guessings I write down for scaling Appium software. Non tested +8 devices so may be non accurate at all, but makes sense for me.  May be useful for someone with this questions right now. translate it! Enjoy!
+
+2026-06-14 06:23:44 CEO -> The Geek Side:
+Also this is the hub i use for testing with 5-10 devices and is sweeeet, works so good, for the people willing to start farming and don’t know what to get, I suggest this baby right here 
+
+https://www.macfixit.com.au/products/sabrent-10-port-60w-usb-3-0-hub-with-individual-power-switches-and-leds-includes-60w-12v-5a-power-adapter-black
+
+2026-06-14 13:04:10 CEO -> The Geek Side:
+https://github.com/charles2gan/GDA-android-reversing-Tool
+
+2026-06-15 19:45:36 CEO -> The Geek Side:
+creep.gg cool web with temp mails and file hosting for free + custom link in bio
+
+check out mine creep.gg/rooted
+
+2026-06-18 16:07:04 CEO -> The Geek Side:
+new bootrom exploit A12 and A13
+https://github.com/prdgmshift/usbliter8
+
+2026-06-20 08:44:49 CEO -> The Geek Side:
+https://github.com/lautarovculic/ioscpy
+
+2026-06-25 00:19:35 CEO -> The Geek Side:
+https://github.com/Leeksov/usbliter8ra1n
+
+2026-06-25 04:34:56 8217189218 -> The Geek Side:
+A must read for everyone who's into antidetect stuff
+
+2026-07-05 09:41:59 CEO -> The Geek Side:
+https://tsssaver.1conan.com
+
+2026-07-05 09:45:36 Hermetic Dev -> The Geek Side:
+https://github.com/hsbugss/usbliter8-xr-ramdisk#english
+
+2026-07-06 14:06:00 Hermetic Dev -> The Geek Side:
+https://arxiv.org/pdf/2606.22283.pdf
+
+2026-07-07 06:08:26 Yazira -> The Geek Side:
+https://github.com/yaziradevteam/AIH-REDDIT-ANALYSER
+
+a tool that analyzes subreddit minimum karma & account age requirements and profiles user activity across communities. Uses session-based login and the private Reddit web API.
+
+2026-07-08 01:44:14 Hermetic Dev -> The Geek Side:
+app cloner last release Crack with ultra ++ you can clone all apps work up to android 16
+
+2026-07-08 01:44:14 Hermetic Dev -> The Geek Side:
+not from me so use it in cloud phone not in your main phone
+
+2026-07-08 02:59:03 1175105256 -> The Geek Side:
+https://github.com/CryptoKrad/rtk
+
+2026-07-08 03:06:32 1175105256 -> The Geek Side:
+60-90% token reduction, tested, plus fixed the PR and send back to the main.
+
+2026-07-08 02:59:04 1175105256 -> The Geek Side:
+
+
+2026-07-08 02:59:04 1175105256 -> The Geek Side:
+I honestly was such a hater of obsidian for so long, but i been testing it too
+
+2026-07-08 02:59:05 1175105256 -> The Geek Side:
+Enjoy :D
+
+2026-07-08 03:04:47 Hermetic Dev -> The Geek Side:
+The Harness Engineer
+
+2026-07-08 03:04:50 Hermetic Dev -> The Geek Side:
+
+
+2026-07-08 03:05:36 1175105256 -> The Geek Side:
+
+
+2026-07-08 03:06:06 1175105256 -> The Geek Side:
+Very few harness's can improve an LLM by 5-8% per interaction :D
+
+2026-07-10 21:55:19 CEO -> The Geek Side:
+https://www.github.com/MethodWhite/Noctua-C
+
+2026-07-10 21:55:20 CEO -> The Geek Side:
+Create and developing with Context-Archectiture (vibe-coding), and my special method SCA (Information on my Medium.com blog -> User @methodwhite.developer in medium)
+
+2026-07-10 21:55:20 CEO -> The Geek Side:
+The blog language is spanish but used the translator page for your reading: https://medium.com/@methodwhite.developer/hackear-la-f%C3%ADsica-no-la-matem%C3%A1tica-c%C3%B3mo-constru%C3%AD-un-simulador-de-ataque-de-canal-lateral-sca-en-5ff582353de6
+
+2026-07-13 12:33:36 Hermetic Dev -> The Geek Side:
+https://browserleaks.com/dns
+
+2026-07-13 14:48:04 CEO -> The Geek Side:
+https://www.yumpu.com/en/document/read/31969188/ios-kernel-exploitation-iokit-edition-reverse-engineering-mac-/91
+
+2026-07-13 20:40:33 8217189218 -> The Geek Side:
+
+
+2026-07-18 05:06:56 Hermetic Dev -> The Geek Side:
+https://bbs.kanxue.com/thread-291585.htm
+
+https://docs.hex-rays.com/release-notes/9_4
+
+2026-07-18 05:15:08 7857628831 -> The Geek Side:
+https://huggingface.co/deadbydawn101/RavenX-CyberAgent-Qwen3.6-35B-A3B-Opus-4.7-OpenMythos-Pentester-BugHunter-RATH-GGUF
+
+2026-07-20 06:15:36 Hermetic Dev -> The Geek Side:
+https://github.com/facebook/ThreatExchange
+
+2026-07-25 06:33:36 Hermetic Dev -> The Geek Side:
+enjoy leak from metascammers, video clipping tool
+
+2026-07-25 06:33:36 Hermetic Dev -> The Geek Side:
+
+
+2026-07-25 13:34:09 CEO -> The Geek Side:
+/ban@GroupHelpBot
+
+2026-07-25 13:34:10 162726413 -> The Geek Side:
+@vuefan [7413596201] baneado.
+
+2026-07-29 02:58:27 CEO -> The Geek Side:
+https://github.com/Icex0/wp2shell-poc
+
+goddamn
+
+2026-07-31 11:28:25 8217189218 -> The Geek Side:
+https://smailpro.com/
+
+2026-08-01 01:32:02 CEO -> The Geek Side:
+https://github.com/huami1314/TrollStore/releases/tag/2.1.1
+
+2026-08-01 05:54:53 Fred -> The Geek Side:
+http://neighbours.sh/
+

@@ -1,0 +1,21 @@
+2026-05-18 17:08:23 Hermetic Dev -> The Geek Side:
+Antibot / Captcha & Reverse Engineering
+
+2026-05-18 17:08:35 Hermetic Dev -> The Geek Side:
+
+
+2026-05-18 17:45:01 Hermetic Dev -> The Geek Side:
+who worked on PX solver? quitted the project after getting mad at it, but i want to retry xD
+
+2026-05-19 12:22:59 8534160739 -> The Geek Side:
+https://github.com/ivRodriguezCA/RE-iOS-Apps
+
+2026-05-19 12:23:08 8534160739 -> The Geek Side:
+Useful for people that want to get started into RE ios apps
+
+2026-05-19 12:45:52 The Geek Side -> The Geek Side:
+fire
+
+2026-05-19 12:45:58 The Geek Side -> The Geek Side:
+will give it a look
+
