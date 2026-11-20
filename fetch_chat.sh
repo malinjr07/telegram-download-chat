@@ -1,5 +1,6 @@
 echo "Dasha Yoo"
 uv run telegram-download-chat @DashaHoney10
+uv run telegram-download-chat @Italipara333
 
 echo "Faceless Francis Group"
 uv run telegram-download-chat 3051045515
@@ -34,7 +35,6 @@ uv run telegram-download-chat @thegeekside --subchat "Sharing"
 uv run telegram-download-chat @thegeekside --subchat "AI"
 uv run telegram-download-chat @thegeekside --subchat "Proxy"
 uv run telegram-download-chat @thegeekside --subchat "Mobile Dev"
-uv run telegram-download-chat @thegeekside --subchat "Antibot / Captcha & RE"
 uv run telegram-download-chat @thegeekside --subchat "Web Dev"
 
 echo "AI Hustlers"
