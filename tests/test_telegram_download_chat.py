@@ -43,6 +43,8 @@ def mock_downloader():
         mock_instance = mock_cls.return_value
         mock_instance.config = {}
         mock_instance.logger = MagicMock()
+        # The CLI checks for a session before downloading (see ensure_session).
+        mock_instance.prepare_client = AsyncMock(return_value=True)
         yield mock_instance
 
 
@@ -165,7 +167,6 @@ class TestProxyUrlCLIOverride:
         ) as mock_cls, patch(
             "telegram_download_chat.cli.DownloaderContext"
         ) as mock_ctx_cls:
-
             mock_args = CLIOptions(
                 chat="test_chat",
                 chats=["test_chat"],
@@ -204,7 +205,6 @@ class TestProxyUrlCLIOverride:
         ) as mock_cls, patch(
             "telegram_download_chat.cli.DownloaderContext"
         ) as mock_ctx_cls:
-
             mock_args = CLIOptions(
                 chat="test_chat",
                 chats=["test_chat"],
@@ -419,7 +419,7 @@ class TestSaveMessagesAsTxtMediaPlaceholders:
         ]
         txt_path = tmp_path / "out.txt"
         await mixin.save_messages_as_txt(messages, txt_path, media_placeholders=True)
-        content = txt_path.read_text()
+        content = txt_path.read_text(encoding="utf-8")
         assert "Check this out\n[photo]" in content
 
     @pytest.mark.asyncio
@@ -445,7 +445,7 @@ class TestSaveMessagesAsTxtMediaPlaceholders:
         ]
         txt_path = tmp_path / "out.txt"
         await mixin.save_messages_as_txt(messages, txt_path, media_placeholders=True)
-        content = txt_path.read_text()
+        content = txt_path.read_text(encoding="utf-8")
         assert "[file=report.pdf]" in content
         # Should not have empty line before placeholder
         lines = content.strip().split("\n")
@@ -463,7 +463,7 @@ class TestSaveMessagesAsTxtMediaPlaceholders:
         ]
         txt_path = tmp_path / "out.txt"
         await mixin.save_messages_as_txt(messages, txt_path)
-        content = txt_path.read_text()
+        content = txt_path.read_text(encoding="utf-8")
         assert "[photo]" not in content
 
     @pytest.mark.asyncio
@@ -477,7 +477,7 @@ class TestSaveMessagesAsTxtMediaPlaceholders:
         ]
         txt_path = tmp_path / "out.txt"
         await mixin.save_messages_as_txt(messages, txt_path, media_placeholders=True)
-        content = txt_path.read_text()
+        content = txt_path.read_text(encoding="utf-8")
         assert "[" not in content
         assert "Just text" in content
 
@@ -511,7 +511,7 @@ class TestSaveMessagesAsTxtReactions:
         ]
         txt_path = tmp_path / "out.txt"
         await mixin.save_messages_as_txt(messages, txt_path, reactions=True)
-        content = txt_path.read_text()
+        content = txt_path.read_text(encoding="utf-8")
         assert "Nice post [👍5 ❤️2]" in content
 
     @pytest.mark.asyncio
@@ -526,7 +526,7 @@ class TestSaveMessagesAsTxtReactions:
         ]
         txt_path = tmp_path / "out.txt"
         await mixin.save_messages_as_txt(messages, txt_path)
-        content = txt_path.read_text()
+        content = txt_path.read_text(encoding="utf-8")
         assert "Nice post" in content
         assert "👍" not in content
 
@@ -542,7 +542,7 @@ class TestSaveMessagesAsTxtReactions:
         ]
         txt_path = tmp_path / "out.txt"
         await mixin.save_messages_as_txt(messages, txt_path, reactions=True)
-        content = txt_path.read_text()
+        content = txt_path.read_text(encoding="utf-8")
         lines = content.strip().split("\n")
         assert lines[-1] == "[👍3]"
 
@@ -557,7 +557,7 @@ class TestSaveMessagesAsTxtReactions:
         ]
         txt_path = tmp_path / "out.txt"
         await mixin.save_messages_as_txt(messages, txt_path, reactions=True)
-        content = txt_path.read_text()
+        content = txt_path.read_text(encoding="utf-8")
         assert "Plain" in content
         assert "[" not in content
 

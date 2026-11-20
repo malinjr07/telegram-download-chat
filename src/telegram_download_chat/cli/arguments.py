@@ -18,6 +18,7 @@ class CLIOptions:
     output: Optional[str] = None
     limit: int = 0
     since_id: Optional[int] = None
+    unread: bool = False
     config: Optional[str] = None
     debug: bool = False
     show_config: bool = False
@@ -45,6 +46,7 @@ class CLIOptions:
     comments_limit: Optional[int] = None
     comments_min_reactions: int = 0
     reactions: bool = False
+    stt: bool = False
 
 
 def parse_args(argv: Optional[list[str]] = None) -> CLIOptions:
@@ -75,6 +77,15 @@ def parse_args(argv: Optional[list[str]] = None) -> CLIOptions:
         help="Start downloading after the specified message ID",
     )
     parser.add_argument(
+        "--unread",
+        action="store_true",
+        help=(
+            "Download only the messages after your read position in the chat "
+            "(forum: per topic). Nothing is marked as read. Replaces the output "
+            "instead of appending to it; incompatible with --since-id"
+        ),
+    )
+    parser.add_argument(
         "-c",
         "--config",
         default=None,
@@ -89,7 +100,7 @@ def parse_args(argv: Optional[list[str]] = None) -> CLIOptions:
     parser.add_argument(
         "--subchat",
         type=str,
-        help="Filter messages for txt by subchat id or URL (only for JSON to TXT conversion)",
+        help="Keep only one thread (reply thread or forum topic) by its root message id or t.me/c URL; a live download needs -o",
     )
     parser.add_argument(
         "--subchat-name",
@@ -244,8 +255,20 @@ def parse_args(argv: Optional[list[str]] = None) -> CLIOptions:
             "(e.g. [👍5 ❤️2]) in the TXT output"
         ),
     )
+    parser.add_argument(
+        "--stt",
+        action="store_true",
+        help=(
+            "Transcribe voice messages and round video notes via Telegram's "
+            "speech-to-text (requires a Premium account). Results are cached "
+            "locally, so re-downloads never transcribe the same audio twice"
+        ),
+    )
 
     args = parser.parse_args(argv)
+    error = unread_conflict(args)
+    if error:
+        parser.error(error)
 
     chat_list: List[str] = []
     if args.chat:
@@ -257,4 +280,23 @@ def parse_args(argv: Optional[list[str]] = None) -> CLIOptions:
     return CLIOptions(**args_dict)
 
 
-__all__ = ["CLIOptions", "parse_args"]
+def unread_conflict(args: object) -> Optional[str]:
+    """Why ``--unread`` cannot run with these options, or ``None``.
+
+    Checked again after a preset is applied, since a preset may set
+    ``since_id`` on top of a parsed ``--unread``.
+    """
+    if not getattr(args, "unread", False):
+        return None
+    if getattr(args, "since_id", None) is not None:
+        return (
+            "--unread takes its cursor from the chat; do not combine it with --since-id"
+        )
+    chats = list(getattr(args, "chats", None) or [])
+    chats += str(getattr(args, "chat", "") or "").split(",")
+    if any(c.strip().endswith(".json") for c in chats):
+        return "--unread needs a live chat, not a JSON export"
+    return None
+
+
+__all__ = ["CLIOptions", "parse_args", "unread_conflict"]

@@ -14,6 +14,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 from telegram_download_chat.core import DownloaderContext, TelegramChatDownloader
+from telegram_download_chat.core.auth_utils import ConfigurationError, NoSessionError
 
 try:  # GUI is optional
     from telegram_download_chat.gui.main import main as gui_main
@@ -26,12 +27,13 @@ from telegram_download_chat.paths import (
 )
 
 from . import commands
-from .arguments import CLIOptions, parse_args
+from .arguments import CLIOptions, parse_args, unread_conflict
 from .commands import (
     analyze_keywords,
     filter_messages_by_subchat,
     split_messages_by_date,
 )
+from .login import ensure_session
 
 _downloader_ctx: DownloaderContext | None = None
 
@@ -127,11 +129,15 @@ async def async_main() -> int:
         from telegram_download_chat.core.presets import apply_preset
 
         apply_preset(preset_config, args)
+    error = unread_conflict(args)
+    if error:
+        downloader.logger.error(error)
+        return 1
     if args.proxy_url:
         downloader.config.setdefault("settings", {})["proxy_url"] = args.proxy_url
     downloader._no_fast_download = bool(args.no_fast_download)
 
-    ctx = DownloaderContext(downloader, cli=True)
+    ctx = DownloaderContext(downloader)
     _downloader_ctx = ctx
 
     try:
@@ -166,6 +172,12 @@ async def async_main() -> int:
         if not chats:
             downloader.logger.error("Chat identifier is required")
             return 1
+
+        # A terminal may log in here; the GUI's stdin-less subprocess may not.
+        # Reading a `.json` export back is offline, so it never asks.
+        if any(not chat_id.endswith(".json") for chat_id in chats):
+            if not await ensure_session(downloader):
+                return 1
 
         stop_file = Path(tempfile.gettempdir()) / "telegram_download_stop.tmp"
         if inspect.iscoroutinefunction(downloader.set_stop_file):
@@ -207,6 +219,15 @@ async def async_main() -> int:
             else 1
         )
 
+    except ConfigurationError:
+        # prepare_client() already logged the message, which names
+        # my.telegram.org and the config file; a traceback over it only buries
+        # the instruction.
+        return 1
+    except NoSessionError:
+        # connect() already logged how to log in; a stack trace on top of it
+        # only hides the instruction (issue #91).
+        return 1
     except Exception as e:  # pragma: no cover - just logging
         downloader.logger.exception(f"An error occurred: {e}")
         return 1
@@ -243,6 +264,19 @@ def main() -> int:
     """Synchronous entry point for the CLI."""
     configure_console_utf8()
     setup_signal_handlers()
+    if len(sys.argv) >= 2 and sys.argv[1] == "login":
+        from .login import parse_login_args, run_login
+
+        opts = parse_login_args(sys.argv[2:])
+        return asyncio.run(
+            run_login(
+                qr=opts.qr,
+                config=opts.config,
+                debug=opts.debug,
+                proxy_url=opts.proxy_url,
+            )
+        )
+
     if (len(sys.argv) >= 2 and sys.argv[1] == "gui") or len(sys.argv) == 1:
         if gui_main is not None:
             try:

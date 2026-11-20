@@ -18,11 +18,19 @@ from telegram_download_chat.core.comments import (
     download_post_comments,
     get_linked_discussion,
 )
+from telegram_download_chat.core.stt import TranscriptCache, transcribe_messages
 from telegram_download_chat.core.topics import (
     GENERAL_KEY,
     fetch_forum_topics,
     group_messages_by_topic,
     slugify_topic,
+)
+from telegram_download_chat.core.unread import (
+    UnreadError,
+    UnreadState,
+    count_unread_incoming,
+    fetch_unread_state,
+    filter_unread,
 )
 from telegram_download_chat.paths import get_relative_to_downloads_dir
 
@@ -211,45 +219,52 @@ async def split_messages_by_size(
     return result
 
 
-def filter_messages_by_subchat(
-    messages: List[Any], subchat_id: str
-) -> List[Any]:
-    """Filter messages by reply_to_msg_id or reply_to_top_id."""
-    if subchat_id.lower() == "general" or subchat_id == "1":
-        from telegram_download_chat.core.topics import _extract_topic_id
-        return [msg for msg in messages if _extract_topic_id(msg) is None]
-
+def parse_subchat_id(subchat_id: str) -> int:
+    """Return the thread root id from a ``--subchat`` value (id or t.me/c URL)."""
     if subchat_id.startswith("https://t.me/c/"):
         parts = subchat_id.strip("/").split("/")
         if len(parts) >= 3:
             try:
-                target_id = int(parts[-1])
+                return int(parts[-1])
             except ValueError as exc:
                 raise ValueError(f"Invalid message ID in URL: {subchat_id}") from exc
-        else:
-            raise ValueError(f"Invalid Telegram chat URL format: {subchat_id}")
+        raise ValueError(f"Invalid Telegram chat URL format: {subchat_id}")
+    try:
+        return int(subchat_id)
+    except ValueError as exc:
+        raise ValueError(f"Invalid message ID format: {subchat_id}") from exc
+
+
+def _reply_header(msg: Any) -> Dict[str, Any]:
+    """Return a message's reply header as a dict (dict or Telethon message)."""
+    if isinstance(msg, dict):
+        reply_to = msg.get("reply_to")
     else:
-        try:
-            target_id = int(subchat_id)
-        except ValueError as exc:
-            raise ValueError(f"Invalid message ID format: {subchat_id}") from exc
+        reply_to = getattr(msg, "reply_to", None)
+        if reply_to is not None and hasattr(reply_to, "to_dict"):
+            reply_to = reply_to.to_dict()
+    return reply_to if isinstance(reply_to, dict) else {}
+
+
+def filter_messages_by_subchat(messages: List[Any], subchat_id: str) -> List[Any]:
+    """Keep a thread: its root message plus replies by reply_to_msg_id/top_id.
+
+    Accepts JSON dicts and Telethon messages alike, since a live download mixes
+    resumed partial-file dicts with freshly fetched messages.
+    """
+    target = str(parse_subchat_id(subchat_id))
 
     filtered = []
     for msg in messages:
-        if isinstance(msg, dict):
-            reply_to = msg.get("reply_to")
-            if not reply_to:
-                continue
-            r_msg_id = str(reply_to.get("reply_to_msg_id"))
-            r_top_id = str(reply_to.get("reply_to_top_id"))
-        else:
-            reply_to = getattr(msg, "reply_to", None)
-            if not reply_to:
-                continue
-            r_msg_id = str(getattr(reply_to, "reply_to_msg_id", None))
-            r_top_id = str(getattr(reply_to, "reply_to_top_id", None))
-
-        if r_msg_id == str(target_id) or r_top_id == str(target_id):
+        msg_id = msg.get("id") if isinstance(msg, dict) else getattr(msg, "id", None)
+        if str(msg_id) == target:
+            filtered.append(msg)
+            continue
+        reply_to = _reply_header(msg)
+        if (
+            str(reply_to.get("reply_to_msg_id")) == target
+            or str(reply_to.get("reply_to_top_id")) == target
+        ):
             filtered.append(msg)
     return filtered
 
@@ -516,6 +531,91 @@ async def fetch_outside_window_citations(
     return await fetch_cited_messages(downloader, entity, messages)
 
 
+async def apply_transcriptions(
+    downloader: TelegramChatDownloader,
+    chat_identifier: Any,
+    messages: List[Any],
+    args: Any,
+) -> None:
+    """Transcribe voice messages and stash the results for ``save_messages``.
+
+    Best-effort: any failure is logged and the export continues without
+    transcripts. Results are keyed by media document id and read back in
+    ``save_messages``, because Telethon's ``to_dict()`` drops attributes set on
+    a raw message.
+    """
+    # Reset first: the downloader is reused across chats in multi-chat runs.
+    downloader._transcripts = {}
+    if not getattr(args, "stt", False) or not messages:
+        return
+    cache = None
+    cache_path = (
+        (downloader.config or {}).get("settings", {}).get("stt_cache_path")
+        if getattr(downloader, "config", None)
+        else None
+    )
+    if cache_path:
+        cache = TranscriptCache(Path(cache_path))
+    try:
+        transcripts = await transcribe_messages(
+            downloader, chat_identifier, messages, cache=cache
+        )
+    except Exception as exc:  # pragma: no cover - best-effort enrichment
+        downloader.logger.warning(f"Failed to transcribe voice messages: {exc}")
+        return
+    # No summary line here: transcribe_messages already reports what it did,
+    # and a count taken here cannot tell a fresh transcription from a cache hit.
+    downloader._transcripts = transcripts
+
+
+def _chat_type(entity: Any) -> str:
+    if isinstance(entity, User):
+        return "private"
+    if isinstance(entity, Chat):
+        return "group"
+    if isinstance(entity, Channel):
+        return "channel" if getattr(entity, "broadcast", False) else "supergroup"
+    return "unknown"
+
+
+async def _empty_result(
+    downloader: TelegramChatDownloader, chat_identifier: Any, args: CLIOptions
+) -> Dict[str, Any]:
+    """The ``--results-json`` entry of a chat that saved no messages."""
+    entity = await downloader.get_entity(chat_identifier)
+    return {
+        "chat_id": getattr(entity, "id", chat_identifier),
+        "chat_title": await downloader.get_entity_full_name(chat_identifier),
+        "chat_type": _chat_type(entity),
+        "args": {"limit": args.limit} if args.limit else {},
+        "messages": 0,
+        "from": None,
+        "to": None,
+        "result_json": None,
+        "result_txt": None,
+        "keywords": [],
+    }
+
+
+async def _read_unread_state(
+    downloader: TelegramChatDownloader, chat_identifier: Any, args: CLIOptions
+) -> UnreadState:
+    """Read where the unread part of the chat starts (``--unread``)."""
+    entity = await downloader.get_entity(chat_identifier)
+    if entity is None:
+        raise UnreadError(f"Cannot resolve chat {chat_identifier}")
+    topic_id = parse_subchat_id(args.subchat) if args.subchat else None
+    state = await fetch_unread_state(downloader.client, entity, topic_id)
+    where = f"topic {state.topic_id}" if state.topic_id is not None else "chat"
+    if state.topics:
+        where = f"{len(state.topics)} forum topic(s)"
+    downloader.logger.info(
+        f"Unread: {state.unread_count} message(s) in {where}, "
+        f"after message {state.read_inbox_max_id}"
+    )
+    return state
+
+
 async def process_chat_download(
     downloader: TelegramChatDownloader,
     chat_identifier: Any,
@@ -539,12 +639,41 @@ async def process_chat_download(
         )
     else:
         chat_dir = output_dir / safe_chat_name
-        stem = f"subchat_{args.subchat}" if args.subchat else "messages"
+        stem = f"messages_subchat_{args.subchat}" if args.subchat else "messages"
+        if args.unread:
+            # Its own file: an unread snapshot replaces the output, and must
+            # not overwrite the chat's full export.
+            stem += "_unread"
         output_file = str(chat_dir / f"{stem}.json")
         # Ensure the chat directory exists early so partial files can be written
         chat_dir.mkdir(parents=True, exist_ok=True)
 
-    since_id = args.since_id
+    unread_state: Optional[UnreadState] = None
+    if args.unread:
+        try:
+            unread_state = await _read_unread_state(downloader, chat_identifier, args)
+        except UnreadError as e:
+            downloader.logger.error(str(e))
+            return {"chat_id": chat_identifier, "error": str(e)}
+        if unread_state.unread_count == 0:
+            downloader.logger.info(
+                f"No unread messages in {safe_chat_name}; nothing to download"
+                + (
+                    " (the chat is only marked as unread)"
+                    if unread_state.unread_mark
+                    else ""
+                )
+            )
+            result = await _empty_result(downloader, chat_identifier, args)
+            result.update(unread_state.to_result())
+            result["unread_downloaded"] = 0
+            return result
+
+    # --unread's cursor comes from the dialog, so a non-None since_id also
+    # keeps the existing output from being read and appended to below.
+    since_id = (
+        unread_state.read_inbox_max_id if unread_state is not None else args.since_id
+    )
     existing_messages: List[Any] = []
     output_path = Path(output_file)
     if not args.overwrite and since_id is None and output_path.exists():
@@ -619,7 +748,8 @@ async def process_chat_download(
     if since_id is not None:
         # If total_limit is set and we haven't reached it yet, skip since_id
         # so the download continues backwards from the oldest existing message
-        if args.limit > 0 and existing_post_count < args.limit:
+        # --unread always keeps its cursor: --limit then takes the newest N.
+        if unread_state is None and args.limit > 0 and existing_post_count < args.limit:
             downloader.logger.info(
                 f"Need {args.limit - existing_post_count} more message(s), "
                 f"continuing backwards"
@@ -627,8 +757,40 @@ async def process_chat_download(
         else:
             download_kwargs["since_id"] = since_id
 
+    if unread_state is not None and unread_state.topic_cursors:
+        # Per-topic cursors drop messages after the fetch, so --limit is applied
+        # once they are filtered, or the newest read topics could use it up.
+        download_kwargs["total_limit"] = 0
+
+    if args.subchat:
+        # A supergroup thread (forum topic or reply thread) can be fetched
+        # server-side instead of walking the whole chat. Not for broadcast
+        # channels: their replies live in the linked discussion group, another
+        # peer and id space. Other chats keep the full scan + filter below.
+        thread_entity = await downloader.get_entity(chat_identifier)
+        if isinstance(thread_entity, Channel) and getattr(
+            thread_entity, "megagroup", False
+        ):
+            download_kwargs["reply_to"] = parse_subchat_id(args.subchat)
+            downloader.logger.info(
+                f"Downloading only thread {download_kwargs['reply_to']}"
+            )
+
     messages = await downloader.download_chat(**download_kwargs)
     downloader.logger.debug(f"Downloaded {len(messages)} messages")
+
+    if unread_state is not None:
+        # min_id already bounds the fetch, but a leftover .part file, a thread
+        # root added by reply_to, and (in a forum) the already-read topics
+        # still bring in messages before the cursor that applies to them.
+        messages = filter_unread(messages, unread_state)
+        if args.limit > 0 and len(messages) > args.limit:
+            messages = sorted(
+                messages,
+                key=lambda m: (m.get("id") if isinstance(m, dict) else m.id) or 0,
+                reverse=True,
+            )[: args.limit]
+        downloader.logger.info(f"Kept {len(messages)} messages after the read cursor")
 
     if existing_messages:
         messages = _dedup_messages(existing_messages + messages)
@@ -720,6 +882,8 @@ async def process_chat_download(
                 f"Filtered to {len(messages)} messages matching keywords: {kw_list}"
             )
 
+    await apply_transcriptions(downloader, chat_identifier, messages, args)
+
     msg_dates = [
         _parse_date(
             getattr(m, "date", None) if not isinstance(m, dict) else m.get("date")
@@ -741,28 +905,11 @@ async def process_chat_download(
 
     if not messages:
         downloader.logger.warning("No messages to save")
-        entity = await downloader.get_entity(chat_identifier)
-        chat_type = "unknown"
-        if isinstance(entity, User):
-            chat_type = "private"
-        elif isinstance(entity, Chat):
-            chat_type = "group"
-        elif isinstance(entity, Channel):
-            chat_type = (
-                "channel" if getattr(entity, "broadcast", False) else "supergroup"
-            )
-        return {
-            "chat_id": getattr(entity, "id", chat_identifier),
-            "chat_title": await downloader.get_entity_full_name(chat_identifier),
-            "chat_type": chat_type,
-            "args": {"limit": args.limit} if args.limit else {},
-            "messages": 0,
-            "from": None,
-            "to": None,
-            "result_json": None,
-            "result_txt": None,
-            "keywords": [],
-        }
+        result = await _empty_result(downloader, chat_identifier, args)
+        if unread_state is not None:
+            result.update(unread_state.to_result())
+            result["unread_downloaded"] = 0
+        return result
 
     full_chat_title = await downloader.get_entity_full_name(chat_identifier)
 
@@ -892,13 +1039,7 @@ async def process_chat_download(
         return {"chat_id": chat_identifier, "error": str(e)}
 
     entity = await downloader.get_entity(chat_identifier)
-    chat_type = "unknown"
-    if isinstance(entity, User):
-        chat_type = "private"
-    elif isinstance(entity, Chat):
-        chat_type = "group"
-    elif isinstance(entity, Channel):
-        chat_type = "channel" if getattr(entity, "broadcast", False) else "supergroup"
+    chat_type = _chat_type(entity)
 
     # In split mode, list the actual per-period (or per-topic) files
     # instead of the unsuffixed base.
@@ -938,6 +1079,9 @@ async def process_chat_download(
         "result_txt": result_txt_value,
         "keywords": keywords_data,
     }
+    if unread_state is not None:
+        result.update(unread_state.to_result())
+        result["unread_downloaded"] = count_unread_incoming(messages, unread_state)
     if topic_dirs:
         result["result_topics"] = [str(d) for d in topic_dirs.values()]
     if args.media:
@@ -1262,11 +1406,13 @@ __all__ = [
     "_dedup_messages",
     "split_messages_by_date",
     "filter_messages_by_subchat",
+    "parse_subchat_id",
     "analyze_keywords",
     "save_messages_with_status",
     "save_txt_with_status",
     "fetch_channel_comments",
     "fetch_outside_window_citations",
+    "apply_transcriptions",
     "process_chat_download",
     "convert",
     "folder",

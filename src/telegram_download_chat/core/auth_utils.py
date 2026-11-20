@@ -21,11 +21,101 @@ from telethon.errors import (
 
 logger = logging.getLogger(__name__)
 
+# Where Telegram says the login code went, keyed by SentCode.type class name.
+_CODE_DELIVERY = {
+    "SentCodeTypeApp": 'Telegram app, chat "Telegram" on a logged-in device',
+    "SentCodeTypeSms": "SMS",
+    "SentCodeTypeSmsWord": "SMS",
+    "SentCodeTypeSmsPhrase": "SMS",
+    "SentCodeTypeCall": "phone call",
+    "SentCodeTypeFlashCall": "flash call",
+    "SentCodeTypeMissedCall": "missed call",
+    "SentCodeTypeEmailCode": "email",
+    "SentCodeTypeSetUpEmailRequired": "not sent, login email must be set up first",
+    "SentCodeTypeFragmentSms": "Fragment",
+    "SentCodeTypeFirebaseSms": "Firebase SMS",
+}
+
+
+def mask_phone(phone) -> str:
+    """Hide all but the last two digits, so debug logs are safe to share."""
+    digits = "".join(ch for ch in str(phone or "") if ch.isdigit())
+    if not digits:
+        return ""
+    return "+" + "*" * max(len(digits) - 2, 0) + digits[-2:]
+
+
+def describe_sent_code(result) -> str:
+    """Summarize an ``auth.SentCode`` answer: delivery type, fallback, timeout."""
+    type_name = type(getattr(result, "type", None)).__name__
+    delivery = _CODE_DELIVERY.get(type_name, "unknown")
+    next_type = getattr(result, "next_type", None)
+    next_name = type(next_type).__name__ if next_type is not None else None
+    return (
+        f"{type(result).__name__} {type_name} ({delivery}), "
+        f"next_type={next_name}, timeout={getattr(result, 'timeout', None)}"
+    )
+
+
+def _trace_send_code_request(client) -> None:
+    """Log login code requests at DEBUG for both Telethon's start() and the GUI.
+
+    Telethon's interactive ``start()`` calls ``self.send_code_request``, so an
+    instance attribute is enough to observe the answer without re-implementing
+    the login flow.
+    """
+    original = client.send_code_request
+
+    async def send_code_request(phone, *args, **kwargs):
+        logger.debug(f"Requesting login code for {mask_phone(phone)}")
+        try:
+            result = await original(phone, *args, **kwargs)
+        except Exception as e:
+            logger.debug(f"Login code request failed: {type(e).__name__}: {e}")
+            raise
+        dc_id = getattr(getattr(client, "session", None), "dc_id", None)
+        logger.debug(f"Login code sent: {describe_sent_code(result)}, dc={dc_id}")
+        return result
+
+    client.send_code_request = send_code_request
+
 
 class TelegramAuthError(Exception):
     """Base exception for Telegram authentication errors."""
 
     pass
+
+
+NO_SESSION_MESSAGE = (
+    "No Telegram session. Run `telegram-download-chat login` "
+    "(or `telegram-download-chat login --qr`), "
+    "or log in on the Settings tab of the GUI."
+)
+
+
+CREDENTIALS_MESSAGE = (
+    "Telegram API credentials are missing or invalid. Get api_id and api_hash "
+    "at https://my.telegram.org/apps and put them in the config file "
+    "(`telegram-download-chat --show-config` prints its path), or fill them in "
+    "on the Settings tab of the GUI."
+)
+
+
+class ConfigurationError(ValueError):
+    """The configured credentials cannot be used, with a message that says why.
+
+    A ``ValueError`` for compatibility with callers that already expect one
+    from a bad config, but a distinct type so the CLI can report it as a single
+    line instead of a traceback.
+    """
+
+
+class NoSessionError(RuntimeError):
+    """Raised when an operation needs a session and no login is possible.
+
+    Downloads never prompt: the GUI runs them as a subprocess without stdin,
+    where Telethon's interactive ``start()`` dies with "lost sys.stdin".
+    """
 
 
 class TelegramAuth:
@@ -138,6 +228,7 @@ class TelegramAuth:
                 self.api_hash,
                 **kwargs,
             )
+            _trace_send_code_request(self.client)
             await self.client.connect()
             self._is_authenticated = await self.client.is_user_authorized()
 

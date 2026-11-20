@@ -2,6 +2,14 @@
 
 A powerful command-line, GUI and web interface utility to download and analyze Telegram chat history in multiple formats.
 
+> **Need to send or manage messages?** This tool is download-only. To send
+> messages, create groups/topics, manage members and folders, see
+> [popstas/telegram-assistant](https://github.com/popstas/telegram-assistant).
+>
+> **Need live monitoring instead of a one-off export?** To watch chats, channels
+> and folders and forward matching messages in real time, see
+> [popstas/telegram-resender](https://github.com/popstas/telegram-resender).
+
 ## Features
 
 - Download complete chat history from any Telegram chat, group, supergroup, channel or Telegram export archive
@@ -10,6 +18,7 @@ A powerful command-line, GUI and web interface utility to download and analyze T
 - Save messages in JSON format with full message metadata
 - Generate human and LLM readable TXT exports with user-friendly display names
 - Download media attachments (photos, videos, documents, audio, etc.)
+- Transcribe voice messages with Telegram Premium speech-to-text (`--stt`), cached so nothing is transcribed twice
 - Use presets for common option sets via `--preset`
 - Cross-platform support (Windows, macOS, Linux)
 - CLI-first, optional graphical user interface and web interface
@@ -20,11 +29,42 @@ A powerful command-line, GUI and web interface utility to download and analyze T
 - Filter messages by specific users
 - Filter saved messages by keywords
 - Filter messages by sub-conversations from message threads
+- Download only the unread messages of a chat (`--unread`)
 
 
 ## Usage
 
-For the first run, you will need to log in to your Telegram account. A browser window will open for authentication.
+### Login
+
+Log in once before the first download. In a terminal, a download without a
+session offers to log you in right there; everywhere else — the GUI, a cron job,
+the console-less Windows build — it never prompts and tells you to run `login`
+instead, so an unattended run fails with a message rather than waiting forever
+for an answer nobody can type.
+
+```bash
+# Log in with a code from Telegram
+telegram-download-chat login
+
+# Log in by scanning a QR code with an app you are already logged into
+telegram-download-chat login --qr
+```
+
+The login code is delivered by Telegram, and for third-party clients it usually
+arrives **in the Telegram app, in the chat named "Telegram"** rather than by
+SMS. If no code arrives at all, use `login --qr`: the code is confirmed from a
+device where you are already logged in, so it does not depend on SMS. Add
+`--debug` to see how Telegram chose to deliver the code.
+
+Since September 2026 Telegram sometimes reports the code as sent to the app
+(`--debug` shows `SentCodeTypeApp` with `next_type=None`) and then never
+delivers it, on any device ([#91](https://github.com/popstas/telegram-download-chat/issues/91)).
+The app cannot change how Telegram delivers codes, so QR login is the
+way in for such accounts.
+
+In the GUI, the same two options live on the Settings tab: fill in the phone and
+code, or press "Log in with QR code". For accounts with two-step verification,
+fill the Password field before scanning.
 
 ### Basic Commands
 
@@ -66,8 +106,8 @@ telegram-download-chat group_username --user 123456
 # Filter messages containing given keywords (comma-separated, case-insensitive)
 telegram-download-chat username --keywords "hello,bye"
 
-# Download messages from a specific thread/reply chain
-telegram-download-chat group_username --subchat 12345
+# Download only one thread/reply chain or forum topic (live download needs -o)
+telegram-download-chat group_username --subchat 12345 -o thread.json
 
 # Specify custom output file
 telegram-download-chat username -o custom_output.json
@@ -92,6 +132,9 @@ telegram-download-chat channel_username --comments --comments-min-reactions 2
 
 # Include each message's reactions inline in the TXT output
 telegram-download-chat username --reactions
+
+# Transcribe voice messages and round video notes (Telegram Premium)
+telegram-download-chat username --stt
 
 # Split output into separate files by month or year
 telegram-download-chat username --split month
@@ -122,6 +165,9 @@ telegram-download-chat username --preset short
 
 # Resume download starting after a specific message ID
 telegram-download-chat username --since-id 5000
+
+# Only what you have not read yet, with media (nothing is marked as read)
+telegram-download-chat @username --unread --media -o unread.json --results-json
 ```
 
 ### Command Line Options
@@ -143,10 +189,12 @@ options:
   -o, --output OUTPUT    Output file path (default: chat_<chat_id>.json)
   -l, --limit LIMIT     Maximum number of messages to download (default: 0 - no limit)
   --since-id SINCE_ID  Start downloading after this message ID
+  --unread              Only messages after your read position (forum: per topic);
+                        nothing is marked as read; incompatible with --since-id
   --min-date DATE       Only download messages on or after this date (format: YYYY-MM-DD). Aliases: --until
   --max-date DATE       Only download messages on or before this date (format: YYYY-MM-DD). Aliases: --from
   --last-days DAYS      Number of days back from --max-date (or today) to download
-  --subchat SUBCHAT     Filter messages by thread/reply chain (message ID or URL)
+  --subchat SUBCHAT     Keep one thread or forum topic (message ID or URL)
   --subchat-name NAME   Custom name for subchat directory
   --user USER           Filter messages by sender ID
   -c, --config CONFIG   Path to config file
@@ -163,6 +211,7 @@ options:
   --no-fast-download    Disable parallel multi-connection media downloads (use single-stream Telethon downloader)
   --media-placeholders  Insert media type indicators (e.g. [photo], [file=name.pdf]) in TXT output
   --reactions           Append each message's reactions as an inline text suffix (e.g. [👍5 ❤️2]) in the TXT output
+  --stt                 Transcribe voice messages and round video notes via Telegram speech-to-text (requires Telegram Premium; results are cached locally)
   --html                Export chat as a Telegram-style HTML file (alongside JSON/TXT)
   --html-media-links    Show clickable file path captions under each media element in HTML export
   --pdf                 Export chat as a PDF document (alongside JSON/TXT)
@@ -344,6 +393,7 @@ settings:
   max_retries: 5            # Maximum number of retry attempts
   log_level: INFO           # Logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
   log_file: app.log        # Path to log file (relative to app dir or absolute)
+  stt_cache_path: ''        # Optional: custom path for the --stt transcript cache
 
 # Map user IDs to display names for text exports
 # Names for users and bots are automatically fetched and stored here, you can change them here.
@@ -420,16 +470,59 @@ Use `--keywords` to save only messages that contain at least one of the given wo
 telegram-download-chat username --min-date 2026-01-01 --keywords "после,hello"
 ```
 
-### Subchat Extraction
-Extract conversations from specific threads or reply chains:
+### Unread Messages
+`--unread` downloads only what the logged-in account has not read yet. The cursor is the chat's read position (`read_inbox_max_id` of the dialog), not the output file:
 
 ```bash
-# Extract messages from a specific thread
-telegram-download-chat group_username --subchat 12345 --subchat-name "Important Discussion"
-
-# Or use a direct message URL
-telegram-download-chat group_username --subchat "https://t.me/c/123456789/12345"
+telegram-download-chat @username --unread --media -o unread.json --results-json
 ```
+
+- Nothing is marked as read: the chat stays unread in Telegram after the run.
+- Without `-o`, the output goes to `<chat>/messages_unread.json`, so the chat's full export in `messages.json` is never overwritten. The output is replaced with the unread messages rather than appended to. `--since-id` cannot be combined with it, and neither can a `.json` export as input.
+- Your own messages sent after the read position are kept as context, but they are not unread. `--results-json` reports `unread_count` and `read_inbox_max_id` as Telegram gives them, plus `unread_downloaded`, the number of incoming messages actually saved.
+- With no unread messages, nothing is downloaded and the existing output is left untouched. The run still exits with 0 and reports `"messages": 0, "unread_count": 0`.
+- `--limit N` keeps the N newest unread messages. The other filters, `--media`, `--html`/`--pdf` and `--split` work as usual.
+- Forums keep a read position per topic, and the counters of the forum as a whole do not match them. With `--subchat <topic>`, that topic's own read position is used. Without `--subchat`, every topic that has unread messages is included: the download starts at the oldest such position, and each message is kept only if it is newer than its own topic's position. `unread_topics` in `--results-json` lists those topics. A long-unread topic therefore makes the whole forum download from that point on. A reply thread has no read position of its own: outside a forum the chat's position is used, inside one the per-topic positions are.
+- The chat must be one you are a member of. For a channel you have not joined, the run fails with an error rather than reporting zero unread.
+
+### Subchat Extraction
+Extract a reply thread or a forum topic, together with its first message:
+
+```bash
+# From an existing export
+telegram-download-chat ./group/messages.json --subchat 12345 --subchat-name "Important Discussion"
+
+# Live: in a supergroup or forum only the thread itself is downloaded, not the whole chat
+telegram-download-chat group_username --subchat "https://t.me/c/123456789/12345" -o topic.json
+```
+
+### Voice Transcription (Speech-to-Text)
+
+`--stt` transcribes voice messages and round video notes using Telegram's own
+speech-to-text, the same one the official clients show. It **requires a Telegram
+Premium account** — without one the export runs normally and logs a warning
+instead of transcribing.
+
+```bash
+# Transcribe voice messages while downloading
+telegram-download-chat username --stt
+
+# Combine with media and HTML: the player and its transcript sit together
+telegram-download-chat username --stt --media --html
+```
+
+Each transcription is saved to the message's `transcript` field in
+`messages.json`, printed on its own `[stt] ...` line in `messages.txt`, and shown
+under the message in the HTML and PDF exports. Because the field lives in the
+JSON, converting an existing export (`--convert`) renders the transcripts too.
+
+Results are cached in `stt-cache.jsonl` in the application data directory, keyed
+by the audio file's Telegram document id. The same voice message is therefore
+transcribed only once — re-downloading the chat, or meeting the same message
+forwarded into another chat, reuses the cached text without an API call (which
+also means an account that later loses Premium keeps everything already
+transcribed). Point the cache somewhere else with `stt_cache_path` in the config,
+or delete the file to force re-transcription.
 
 ## Graphical User Interface (GUI)
 
@@ -501,6 +594,7 @@ Contains complete message data including metadata like:
 - Media and file attachments
 - Reactions and views
 - `attachment_path` — relative path to the downloaded media file (when `--media` is used)
+- `transcript` — voice message transcription (when `--stt` is used)
 
 ### Text Output (`[chat_name]/messages.txt`)
 A human-readable version of the chat with:
@@ -510,6 +604,7 @@ A human-readable version of the chat with:
 - Reply indicators
 - Optional media type indicators with `--media-placeholders` (e.g. `[photo]`, `[video]`, `[file=report.pdf]`)
 - Optional inline reactions with `--reactions` (e.g. `Nice post [👍5 ❤️2]`; custom/premium emoji show as `⭐`)
+- Optional voice transcriptions with `--stt`, on their own `[stt] ...` line under the message
 
 ### Media Attachments (`[chat_name]/attachments/`)
 When using the `--media` flag, media files are downloaded alongside the message files, organized by media type:

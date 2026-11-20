@@ -19,14 +19,19 @@ settings:
   # Maximum number of retries for failed requests
   max_retries: 5
   
-  # Log file path (empty for console only)
-  log_file: ./data/telegram_downloader.log
+  # Log file path, relative to the app dir or absolute (empty for console only)
+  log_file: app.log
   # Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
   log_level: INFO
 
   # GUI: help for the "Chat" field (which identifier to type).
   # gui_chat_hint_tooltip: false  # info icon + hover tooltip (off by default)
   # gui_chat_hint_help: true      # collapsible "How to fill this?" block (on)
+
+  # Speech-to-text (--stt) cache. Transcriptions are keyed by the audio file's
+  # Telegram document id, so nothing is ever transcribed twice. Defaults to
+  # stt-cache.jsonl in the application data directory.
+  # stt_cache_path: ./data/stt-cache.jsonl
 
   # Optional proxy URL for Telegram connections
   # Supported schemes: socks5, socks4, http, https

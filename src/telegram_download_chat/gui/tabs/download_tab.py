@@ -378,6 +378,11 @@ class DownloadTab(QWidget):
         self.pdf_chk = QCheckBox("PDF document")
         settings_form.addRow("PDF export:", self.pdf_chk)
 
+        # Speech-to-text (Telegram Premium): transcribe voice messages and
+        # round video notes. Results are cached locally between runs.
+        self.stt_chk = QCheckBox("Transcribe voice messages (Telegram Premium)")
+        settings_form.addRow("Speech-to-text:", self.stt_chk)
+
         # Download comments (channel-only): a checkbox plus a per-post limit
         # combo on the same row. The combo is enabled only when the checkbox is
         # checked. "No limit" carries data ``None``; presets carry their int.
@@ -407,6 +412,7 @@ class DownloadTab(QWidget):
                 self.media_chk,
                 self.html_chk,
                 self.pdf_chk,
+                self.stt_chk,
                 self.comments_chk,
             ],
             self,
@@ -615,6 +621,9 @@ class DownloadTab(QWidget):
             if "pdf" in settings:
                 self.pdf_chk.setChecked(settings["pdf"])
 
+            if "stt" in settings:
+                self.stt_chk.setChecked(bool(settings["stt"]))
+
             if "comments" in settings:
                 self.comments_chk.setChecked(bool(settings["comments"]))
 
@@ -673,6 +682,7 @@ class DownloadTab(QWidget):
                     "media": self.media_chk.isChecked(),
                     "html": self.html_chk.isChecked(),
                     "pdf": self.pdf_chk.isChecked(),
+                    "stt": self.stt_chk.isChecked(),
                     "comments": self.comments_chk.isChecked(),
                     "comments_limit": self.comments_limit_combo.currentData(),
                     "sort": self.sort_combo.currentData() or "asc",
@@ -802,6 +812,9 @@ class DownloadTab(QWidget):
         if self.pdf_chk.isChecked():
             cmd_args.append("--pdf")
 
+        if self.stt_chk.isChecked():
+            cmd_args.append("--stt")
+
         if self.comments_chk.isChecked():
             cmd_args.append("--comments")
             limit = self.comments_limit_combo.currentData()
@@ -817,39 +830,6 @@ class DownloadTab(QWidget):
     def stop_download(self):
         """Stop the download process."""
         self.download_stopped.emit()
-
-    def on_download_finished(self, success: bool, was_stopped: bool = False):
-        """Handle download completion.
-
-        Args:
-            success: Whether the download completed successfully
-            was_stopped: Whether the download was stopped by the user
-        """
-        # Save settings first
-        self._save_settings()
-
-        # Update UI
-        self._set_download_in_progress(False)
-
-        if was_stopped:
-            # User stopped the download
-            QMessageBox.information(
-                self,
-                "Download Stopped",
-                "The download was stopped by the user. Partial results have been saved.",
-            )
-        elif success:
-            # Download completed successfully
-            QMessageBox.information(
-                self, "Download Complete", "The download has completed successfully!"
-            )
-        else:
-            # Download failed
-            QMessageBox.critical(
-                self,
-                "Download Failed",
-                "The download failed. Please check the log for details.",
-            )
 
     def update_progress(self, current: int, total: int):
         """Update the progress bar with download progress.
@@ -977,6 +957,7 @@ class DownloadTab(QWidget):
         settings["media"] = self.media_chk.isChecked()
         settings["html"] = self.html_chk.isChecked()
         settings["pdf"] = self.pdf_chk.isChecked()
+        settings["stt"] = self.stt_chk.isChecked()
         settings["comments"] = self.comments_chk.isChecked()
         settings["comments_limit"] = self.comments_limit_combo.currentData()
         settings["sort"] = self.sort_combo.currentData() or "asc"
@@ -1009,6 +990,7 @@ class DownloadTab(QWidget):
         self.media_chk.setChecked(bool(settings.get("media", False)))
         self.html_chk.setChecked(bool(settings.get("html", False)))
         self.pdf_chk.setChecked(bool(settings.get("pdf", False)))
+        self.stt_chk.setChecked(bool(settings.get("stt", False)))
         self.comments_chk.setChecked(bool(settings.get("comments", False)))
         self._set_comments_limit(settings.get("comments_limit"))
 

@@ -32,13 +32,15 @@ Confirm `api_id` and `api_hash` are present **without exposing their values**. `
 
 These come from https://my.telegram.org — NEVER invent them. If missing, tell the user to add them to the config file (its location is shown by `--show-config`).
 
-The first live download triggers an interactive Telegram login (phone number, then the login code, optionally a 2FA password). This MUST run in a real, attachable terminal — use a foreground `! <cmd>` invocation so the user can type the code. Only `--show-config` and `--help` run fully offline; **convert mode (`.json` input) also opens a Telegram connection** (it requires `api_id`/`api_hash`, and with no saved session it can start the same interactive login), so treat convert as needing credentials and a real terminal too.
+Logging in is its own command: `telegram-download-chat login` (code from Telegram) or `telegram-download-chat login --qr` (scan a QR code from an app that is already logged in). Run it as a foreground `! <cmd>` in a real, attachable terminal so the user can type the code, the phone or a 2FA password — never in the background.
+
+A download with no saved session offers the same login **only when it runs in a real terminal**; with no terminal it never prompts, it logs `No Telegram session. Run telegram-download-chat login …` and exits 1. So a backgrounded or piped run fails fast with a message instead of hanging on a prompt nobody can answer. Only `--show-config` and `--help` run fully offline; **convert mode (`.json` input) also opens a Telegram connection** (it requires `api_id`/`api_hash` and a saved session, though it never offers to log in), so treat convert as needing credentials and an existing session.
 
 ### Step 2 — Detect the mode from the target
 
 The positional `CHAT` argument selects the mode (see `cli/__init__.py`):
 
-- ends with `.json` → **convert** an existing export to TXT/HTML/PDF. The CLI still opens a Telegram connection for convert (it needs `api_id`/`api_hash`, and with no saved session can start an interactive login), so it is not offline/unattended — only `--show-config`/`--help` run with no connection.
+- ends with `.json` → **convert** an existing export to TXT/HTML/PDF. The CLI still opens a Telegram connection for convert (it needs `api_id`/`api_hash` and a saved session), so it is not offline — only `--show-config`/`--help` run with no connection. Convert never offers to log in: with no session it fails with the `login` instruction.
 - starts with `folder:` (e.g. `folder:Work`) → **download every chat** in that Telegram folder (live).
 - username (`@name` or `name`), phone number, numeric id, or channel id (`-100…`) → **live download** of that chat.
 - comma-separated list of any of the above → processed one by one.
@@ -46,13 +48,13 @@ The positional `CHAT` argument selects the mode (see `cli/__init__.py`):
 
 ### Step 3 — Build the command from intent
 
-Map the user's request to flags (full reference below). Common building blocks: `-o/--output`, `-l/--limit`, date range (`--max-date/--from`, `--min-date/--until`, `--last-days`), `--user`, `--keywords`, `--subchat`, `--split`, `--media`, `--html`, `--pdf`. Add `--results-json` whenever you need to parse the outcome programmatically.
+Map the user's request to flags (full reference below). Common building blocks: `-o/--output`, `-l/--limit`, date range (`--max-date/--from`, `--min-date/--until`, `--last-days`), `--user`, `--keywords`, `--subchat`, `--unread`, `--split`, `--media`, `--comments`, `--stt`, `--html`, `--pdf`. Add `--results-json` whenever you need to parse the outcome programmatically.
 
 ### Step 4 — Run it
 
 - `--show-config` and `--help`: run in the foreground normally (no connection).
-- Convert mode (`.json` input) and short capped downloads (e.g. small `-l`): run in the foreground normally **only when credentials and a saved session already exist** — both still open a Telegram connection. With no saved session, convert can start the same interactive login, so run it via the attachable-terminal path below.
-- **Any run that may need interactive login** (first live download, or convert/live with no saved session): run **only** as a foreground `! <cmd>` in a real, attachable terminal so the user can type the phone number, login code, and optional 2FA password. **Never background these** — a background process can't receive login input and will hang.
+- Convert mode (`.json` input) and short capped downloads (e.g. small `-l`): run in the foreground normally **only when credentials and a saved session already exist** — both still open a Telegram connection.
+- **With no saved session**: run `telegram-download-chat login` (or `login --qr`) as a foreground `! <cmd>` in a real, attachable terminal first, so the user can type the phone, the code and an optional 2FA password. A live download started in such a terminal offers the same login itself; anywhere else it exits 1 with the instruction rather than hanging. **Never background a run that may need to log in.**
 - Large/long-running downloads **where a saved session already exists** (no login prompt possible): run as a foreground `! <cmd>` to watch progress, or in the background. Confirm scope first (see Constraints).
 
 ### Step 5 — Report results
@@ -83,6 +85,7 @@ Source of truth: `src/telegram_download_chat/cli/arguments.py`. Run `telegram-do
 
 - `-l`, `--limit` — maximum number of messages to download (default: `0` = no limit).
 - `--since-id` — start downloading after the specified message ID.
+- `--unread` — only the messages after the account's read position in the chat (nothing is marked as read; the output is replaced, not appended to; without `-o` it goes to `<chat>/messages_unread.json`, so the full `messages.json` export is left alone). A chat you are not a member of fails with an error. Incompatible with `--since-id` and with a `.json` input. `--results-json` adds `unread_count`, `read_inbox_max_id` and `unread_downloaded` (incoming messages saved; own messages after the read position are kept as context but not counted). With nothing unread it downloads nothing and exits 0. Forums: `--subchat <topic>` uses that topic's read position; without it, every topic with unread messages is included, each from its own position (`unread_topics` in the results). `--limit N` keeps the N newest unread.
 - `--max-date`, `--from` — only messages on or before this date (`YYYY-MM-DD`). Also the base date for `--last-days`.
 - `--min-date`, `--until` — only messages on or after this date (`YYYY-MM-DD`).
 - `--last-days` — number of days back from `--max-date` (or today) to download.
@@ -91,7 +94,7 @@ Source of truth: `src/telegram_download_chat/cli/arguments.py`. Run `telegram-do
 
 - `--user` — sender identifier (`12345` or `user12345`). **Caveat:** it only actually *filters* when converting a Telegram Desktop **archive** export (a JSON dict containing `about`/`chats`). For a normal message-list JSON it does NOT filter — it only tags the output filename (`..._user_<id>.txt`). Live downloads ignore it entirely. To restrict a normal export to one sender, filter the JSON yourself.
 - `--keywords` — comma-separated keywords to search in messages.
-- `--subchat` — filter to a subchat/reply thread by message id or URL. Works on JSON→TXT conversion, and on live downloads when combined with `-o/--output` (without `-o`, an existing `.json` input is required).
+- `--subchat` — keep one reply thread or forum topic (its first message included) by message id or `t.me/c/<chat>/<id>` URL. Works on JSON→TXT conversion, and on live downloads when combined with `-o/--output` (without `-o`, an existing `.json` input is required). Live, in a supergroup/forum only that thread is fetched, not the whole chat; if a `<output>.part.jsonl` from an earlier whole-chat run sits next to `-o`, delete it or pass `--overwrite`, or newer thread messages are missed.
 - `--subchat-name` — name for the subchat directory (default: `subchat_<subchat_id>`).
 
 ### Sort
@@ -103,6 +106,17 @@ Source of truth: `src/telegram_download_chat/cli/arguments.py`. Run `telegram-do
 - `--media` — download all media attachments (images, videos, audio, documents, etc.).
 - `--no-fast-download` — disable parallel multi-connection media downloads (use single-stream Telethon downloader).
 - `--media-placeholders` — insert media type indicators (e.g. `[photo]`, `[file=name.pdf]`) in TXT output.
+
+### Comments (channels only)
+
+- `--comments` — download post comments from the channel's linked discussion group (a no-op on other entities and on channels without comments). Comments are merged into the same `messages.json`/`.txt`/`.html` and nested under their post.
+- `--comments-limit` — max comments fetched per post (requires `--comments`; omit for unlimited).
+- `--comments-min-reactions` — drop comments whose total reaction count is below N (requires `--comments`; `0` = keep all). Applied after `--comments-limit`, so the limit caps how many are fetched and this trims the low-reaction ones.
+
+### Enrichment
+
+- `--reactions` — append each message's reactions as an inline suffix (e.g. `[👍5 ❤️2]`) in the TXT output.
+- `--stt` — transcribe voice messages and round video notes via Telegram's speech-to-text. **Requires a Telegram Premium account**; without one the pass is skipped with a warning and makes no API calls. Transcripts appear as a `transcript` field in JSON, a `[stt] …` line in TXT, and an italic block in HTML/PDF. Results are cached locally (keyed by the audio's document id), so a re-download — or the same audio in another chat — is never transcribed twice.
 
 ### Export
 
@@ -148,6 +162,10 @@ Each scenario lists a runnable command and the situation it fits. Replace `@chat
   `telegram-download-chat folder:Work`
 - **HTML / PDF export** — "export this chat as a readable HTML page and a PDF":
   `telegram-download-chat @chat --html --pdf`
+- **Channel with comments** — "export this channel including the discussion comments, but only the ones people reacted to":
+  `telegram-download-chat @channel --comments --comments-min-reactions 3 --html`
+- **Voice transcription** — "download this chat and transcribe the voice messages":
+  `telegram-download-chat @chat --stt --media --html`
 - **Proxy + preset** — "use my socks proxy and the 'archive' preset":
   `telegram-download-chat @chat --proxy-url socks5://127.0.0.1:1080 --preset archive`
 
@@ -155,6 +173,6 @@ Each scenario lists a runnable command and the situation it fits. Replace `@chat
 
 - **Confirm before large/long downloads.** If the user gives no `-l/--limit` and no date range on a live chat, the download is unbounded. Confirm scope (or suggest a `--last-days` / `-l` cap) before starting.
 - **Never invent `api_id` / `api_hash`.** They come only from https://my.telegram.org. If `--show-config` shows them missing, ask the user to add them — do not guess.
-- **Live login needs a real terminal.** The first live download prompts for phone number, login code, and optional 2FA password. Run it as a foreground `! <cmd>` so the user can type the code; never assume it can run fully unattended.
+- **Logging in needs a real terminal.** `login` / `login --qr` ask for the phone, the code and an optional 2FA password, and a live download offers the same when it runs in a terminal. Run those as a foreground `! <cmd>`; never assume a login can run unattended. Exit codes are reliable from both `telegram-download-chat` and `python -m telegram_download_chat`, so a failure is detectable without scraping the log.
 - **Respect a user-set `--proxy-url` / proxy config.** Don't strip or override the proxy the user configured.
 - **Don't modify project source code.** This skill only invokes the CLI and reports output paths. For GUI / MCP / web usage, defer — they are out of scope here.
